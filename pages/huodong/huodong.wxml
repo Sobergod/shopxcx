@@ -1,0 +1,32 @@
+<!--pages/huodong/huodong.wxml-->
+<view class='Container'>
+  <image class="image_frame" src="{{picUrl}}" mode="aspectFill">
+  </image>
+
+  <!-- 图片结束 -->
+  <block wx:for="{{menu_b}}">
+    <view class='list_c'>
+      <view class='tw'>
+        <image class="tpa" src="{{item.tpUrl}}" mode="aspectFill">
+        </image>
+        <view>
+          <text class='text_b'>{{item.title}}</text>
+          <text class='text_c'>{{item.new}} </text>
+          <text class='text_d'>{{item.new}} </text>
+          <text class='text_f'>{{item.price}}            
+          </text>
+        </view>
+        <view class='last_btn'>
+          <button type="defaule" bindtap="clickButton" class='btn'>购买</button>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+</view>
+<!-- 头部返回结束 -->
+<!-- block wx:for="{{商品列表}}"
+<view data-fid='{{商品.id}}' bindtap='跳转方法'</view>
+<navigator url='商品详情？fid='+{{商品.id}}></navigator> -->
+<!-- 图文列表结束 -->

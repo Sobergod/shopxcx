@@ -1,0 +1,31 @@
+<!--pages/hufu/hufu.wxml-->
+<view wx:if="{{!hasList}}" class='zwsp'>暂无商品</view>
+<view wx:else class='Container'>
+  <view class='navber'>
+      <view bindtap='' class='navber_list'>销量</view>
+      <view bindtap='' class='navber_list'>新品</view>
+      <view bindtap='' class='navber_list'>收藏量</view>
+      <view bindtap='sort_price' class='navber_list'>价格</view>      
+  </view>
+
+  <!-- 导航结束 -->
+  <view class='list'>
+    <block wx:for="{{menu_a}}" wx:key="{{item.shopid}}">
+      <view class='list_a'>
+        <navigator url="../xiangqing/xiangqing?fid={{item.shopid}}'" hover-class="other-navigator-hover"><image class="image_frame" src="{{item.shopphoto}}" mode="aspectFill">
+        </image></navigator>
+        <text class='text_a'>{{item.shopname}}</text>
+        <text class='text_b'>{{item.shopinfo}}</text>
+        <view class='list_b'>
+          <view>
+            <text class='text_a'>{{item.shopmoney}}</text>
+          </view>
+          <view>
+            <text class='iconfont icon-wujiaoxingkong'></text>
+            <text class='text_a'>{{shoucang}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

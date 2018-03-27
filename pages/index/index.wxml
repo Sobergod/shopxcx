@@ -1,0 +1,127 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 头部返回结束 -->
+  <view class='sousuo'>
+    <input class='seek' placeholder="搜索商品" auto-focus/>
+    <text class='iconfont icon-fangdajing'></text>
+    <view>
+      <text class='iconfont icon-wujiaoxingkong'></text>
+      <text class='shoucang'> 我的收藏
+    </text>
+    </view>
+  </view>
+
+  <!--搜索-->
+  <view class='lunbo'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!--签到  -->
+    <navigator url="../qiandao/qiandao" hover-class="other-navigator-hover">
+      <view class='qiandao'>
+        <image src='../../images/hongbao.jpg' class='qiandao_img'></image>
+        <text class='hongbao'> 签到领红包></text>
+      </view>
+    </navigator>
+  </view>
+
+  <!--轮播图-->
+
+  <scroll-view scroll-x="true" class="nav">
+    <block wx:for="{{fenlei}}" wx:key="{{item.fid}}">
+      <view class='navber'>
+        <navigator url='../hufu/hufu?fid={{item.fid}}&fname={{item.name}}' hover-class="other-navigator-hover">{{item.name}}</navigator>
+      </view>
+    </block>
+  </scroll-view>
+
+
+
+  <!--导航-->
+  <view class='bg'>
+    <view class='box'>
+      <view class='center'>
+        <view class='fenlei'>
+          热门分类
+        </view>
+        <view class='fenlei'>
+          <navigator url="../fenlei/fenlei" hover-class="other-navigator-hover">更多
+            <text class='iconfont icon-youjiantou'></text>
+          </navigator>
+        </view>
+      </view>
+      <view class='list'>
+        <block wx:for="{{menu}}" wx:key="{{item.fid}}">
+          <view class='list_a'>
+            <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
+            </image>
+            <text class='text_a'>{{item.name}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!--热门分类-->
+  <view class='bg'>
+    <view class='box'>
+      <view class='center'>
+        <view class='fenlei'>
+          精选活动
+        </view>
+      </view>
+      <view class='list'>
+        <block wx:for="{{menu_a}}">
+          <image class="abc" src="{{item.picUrl}}" mode="aspectFill">
+          </image>
+        </block>
+      </view>
+      <view class='center_a'>
+        <view class='gengduo'>
+          <navigator url="../huodong/huodong" hover-class="other-navigator-hover">
+            <text class='gengduo'>更多 </text> </navigator>
+          <text class='iconfont icon-youjiantou aaa'></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--精选活动-->
+  <view class='bg'>
+    <text class='text_q'>--更多商品--</text>
+    <block wx:for="{{goodsList}}">
+      <view class='list_c'>
+        <navigator url="../xiangqing/xiangqing?gid={{item.shopid}}" hover-class="other-navigator-hover">
+          <view class='tw'>
+            <view class='pic-name'>
+              <image class="tpa" src="{{item.shopphoto}}">
+              </image>
+              <view>
+                <view class='text_b text-overflow'>{{item.shopname}}</view>
+                <view class='text_c'>{{item.new}} </view>
+              </view>
+            </view>
+            <view class='btn-group'>
+              <text class='text_f'>￥{{item.shopmoney}}</text>
+              <button type="defaule" bindtap="clickButton" class='btn'>购买</button>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <view class='loading' wx:if='{{isLoading==1}}'>
+      <image src='../../images/loading.gif'></image>
+      <text>加载中</text>
+    </view>
+    <view wx:elif='{{isLoading==0}}' class='loading'>
+      <text>下拉加载更多..</text>
+    </view>
+    <view wx:else class='loading'>没有更多了</view>
+  </view>
+  <!--更多商品-->
+</view>

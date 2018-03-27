@@ -1,0 +1,14 @@
+<!--pages/huodongfenlei/huodongfeilei.wxml-->
+<view class='bg'>
+  <block wx:for="{{menu_b}}">
+    <view class='list_c'>
+      <view class='tw'>
+        <image class="tpa" src="{{item.tpUrl}}" mode="aspectFill">
+        </image>
+        <view>
+          <text class='text_c'>{{item.new}} </text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

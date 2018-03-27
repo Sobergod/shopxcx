@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/huodongfenlei/huodongfenlei",  
+    "pages/shoucang/shoucang",
+    "pages/gouwuche/gouwuche",
+    "pages/hufu/hufu",
+    "pages/fenlei/fenlei",
+    "pages/qiandao/qiandao",
+    "pages/mine/mine",
+    "pages/tab/tab",
+    "pages/huodong/huodong",
+    "pages/xiangqing/xiangqing",
+    "pages/kefu/kefu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffa3cb",
+    "navigationBarTitleText": "微信小程序",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "backgroundColor": "#1b1b1b",
+    "list": [
+      {
+        "selectedIconPath": "images/zy.png",
+        "iconPath": "images/zy.png",
+        "pagePath": "pages/index/index"
+        
+      },
+      {
+        "selectedIconPath": "images/gwc.png",
+        "iconPath": "images/gwc.png",
+        "pagePath": "pages/gouwuche/gouwuche"
+        
+      },
+      {
+        "selectedIconPath": "images/gr.png",
+        "iconPath": "images/gr.png",
+        "pagePath": "pages/mine/mine"
+        
+      }
+    ]
+  }
+  
+
+}

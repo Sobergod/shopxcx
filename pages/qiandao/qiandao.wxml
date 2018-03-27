@@ -1,0 +1,37 @@
+<!--pages/qiandao/qiandao.wxml-->
+<view class="container">
+  <view class='navber'>
+    <text class='daka'>打卡规则</text>
+    <view>
+      <text class='denglu'>自动登录</text>
+      <switch type="switch" color='#ffa3cc' checked="true" bindchange="listenerSwitch" />
+    </view>
+  </view>
+
+  <!-- 横向导航栏结束 -->
+  <view class='main'>
+    <view class='list_a' wx:for="{{menu}}">
+      <text class='text_a'>{{item.title}}</text>
+      <text class='text_b'>{{item.title_a}}</text>
+      <view class='list'>
+        <block wx:for="{{menu_a}}">
+          <view class='list_b'>
+            <image class="image_frame" src="{{item.picUrl}}" mode="aspectFill">
+            </image>
+            <view>
+              <text class='iconfont icon-sdf'></text>
+              <text class='text_c'>{{item.title_b}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+<!-- 列表结束 -->
+
+<view class='sidebar'>
+    <text>领奖记录</text>
+    <text class='iconfont icon-youjiantou'></text>
+  </view>
+</view>

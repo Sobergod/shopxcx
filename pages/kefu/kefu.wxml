@@ -1,0 +1,25 @@
+<!--pages/kefu/kefu.wxml-->
+<view class='Container'>
+  <view class='nav'>
+    <text class='iconfont icon-sdf'></text>
+    <text> 客服</text>
+  </view>
+
+  <!-- 头部返回结束 -->
+<view class='tabber'>
+    <view class='a'>
+      <text class='iconfont icon-yuyin'></text>
+    </view>
+    <view class='c'>
+      <input class='shuru'>ddfg</input>
+    </view>
+    <view class='a'>
+      <text class='iconfont icon-buoumaotubiao49'></text>
+    </view>
+    <view class='b'>
+      <text class='iconfont icon-jiahao'></text>
+    </view>
+    
+  </view>
+  <!-- 底部结束 -->
+</view>

@@ -1,0 +1,149 @@
+<view class="container">
+  <view class="userinfo">
+    <image src="../../images/bg.jpg" class="account-bg"></image>
+    <view class='userinfo_a'>
+      <image class="image_frame" src="{{userInfo.userImg}}" mode="aspectFill">
+      </image>
+      <view class='userinfo_b'>
+        <text class='text_a'>{{userInfo.userName}}</text>
+        <text bindtap='addressTab' class='text_b'>管理收货地址</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="separate"></view>
+  <view class="line"></view>
+
+  <view class="navs">
+    <view class='navs_left'>
+      <view class='nav-item'>
+        <text class='iconfont icon-qiandao'></text>
+        <text class="title" src="{{title}}" mode="aspectFill">签到</text>
+      </view>
+      <view class='nav-item'>
+        <text class='iconfont icon-daifukuan'></text>
+        <text class="title" src="{{title}}" mode="aspectFill">待付款</text>
+      </view>
+      <view class='nav-item'>
+        <text class='iconfont icon-icon-receive'></text>
+        <text class="title" src="{{title}}" mode="aspectFill">待收货</text>
+      </view>
+      <view class='nav-item'>
+        <text class='iconfont icon-pingjia'></text>
+        <text class="title" src="{{title}}" mode="aspectFill">待评价</text>
+      </view>
+      <view class='nav-item'>
+        <text class='iconfont icon-shouhou'></text>
+        <text class="title" src="{{title}}" mode="aspectFill">售后</text>
+      </view>
+    </view>
+    <view class='navs_right'>
+      <text class='iconfont icon-dingdan'></text>
+      <text class="title" src="{{title}}" mode="aspectFill">全部订单</text>
+    </view>
+  </view>
+
+  <!-- 横向列表结束 -->
+  <view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-chongzhi'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">充值</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-star'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">我的收藏</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-pintuan'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">我的拼团</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-hongbao'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">我的红包</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-youhuiquan'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">优惠券</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-yue01'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">账户余额</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-kefu'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">联系客服</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-jiaoyin'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">足记</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-msnui-dianpu'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">店铺信息</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-dizhi'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">收货地址</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+    <view class="list-item">
+      <view class='list_left'>
+        <text class='iconfont icon-yijian'></text>
+      </view>
+      <view class='list'>
+        <text class="item-text">意见反馈</text>
+        <text class='iconfont icon-arrow-right'></text>
+      </view>
+    </view>
+  </view>
+  <!-- 列表结束 -->
+</view>

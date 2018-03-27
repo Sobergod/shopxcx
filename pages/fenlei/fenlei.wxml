@@ -1,0 +1,17 @@
+<!--pages/fenlei/fenlei.wxml-->
+<view class='Container'>
+  <view class='list'>
+    <block wx:for="{{menu}}">
+      <view class='list_a'>
+        <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
+        </image>
+        <view>{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- <button class='btn'>
+    <text class='iconfont icon-icon-'></text> 搜 搜 看
+  </button> -->
+
+  <!-- 列表结束 -->
+</view>
