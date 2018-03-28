@@ -1,0 +1,20 @@
+<!--pages/pingjia/pingjia.wxml-->
+<view class='center'>
+  <block wx:for="{{menu}}" wx:key="{{item.fid}}">
+    <view class='center_list'>
+      <view class='list'>
+        <view class='list_a'>
+          <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
+          </image>
+          <text class='text_a'>{{item.name}}</text>
+        </view>
+        <text class='text_b'>{{item.time}}</text>
+      </view>
+      <view class='news'>
+        <text class='text_c'>{{item.wenben}}</text>
+        <image class="image_pct" src="{{item.pct}}" mode="aspectFill">
+        </image>
+      </view>
+    </view>
+  </block>
+</view>

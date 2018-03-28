@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/pingjia/pingjia",
     "pages/youhuiquan/youhuiquan",
     "pages/yue/yue",
     "pages/index/index",
