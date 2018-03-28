@@ -38,9 +38,6 @@
       </view>
     </block>
   </scroll-view>
-
-
-
   <!--导航-->
   <view class='bg'>
     <view class='box'>
@@ -56,7 +53,7 @@
       </view>
       <view class='list'>
         <block wx:for="{{menu}}" wx:key="{{item.fid}}">
-          <view class='list_a'>
+          <view class='list_a' bindtap='goToSubListTab' data-efid='{{item.fid}}'>
             <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
             </image>
             <text class='text_a'>{{item.name}}</text>

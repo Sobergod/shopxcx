@@ -45,6 +45,12 @@ Page({
     this.setData({
       isLoading: 1,
       num:num,
+    });
+  },
+  goToSubListTab:function (e) {
+    var eFid = e.currentTarget.dataset.efid;
+    wx.navigateTo({
+      url: '../../pages/ejfl/ejfl?fid='+eFid,
     })
   },
   collectionTab:function() {
@@ -88,7 +94,6 @@ Page({
     var that = this;
     common.netWorkRequest({
       url: "xfenlei",
-      method: "POST",
       onSuccess: function (res) {
         var b = [];
         for (var i in res.data) {
