@@ -4,7 +4,7 @@
   <view class='sousuo'>
     <input class='seek' placeholder="搜索商品" auto-focus/>
     <text class='iconfont icon-fangdajing'></text>
-    <view bindtap=''>
+    <view bindtap='collectionTab'>
       <text class='iconfont icon-wujiaoxingkong'></text>
       <text class='shoucang'> 我的收藏</text>
     </view>

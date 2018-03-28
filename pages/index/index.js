@@ -50,6 +50,11 @@ Page({
       num:num,
     })
   },
+  collectionTab:function() {
+    wx.navigateTo({
+      url: '../../pages/shoucang/shoucang',
+    })
+  },
   // 获得所有商品
   _getGoodsList: function (num) {
     var goodsNum,
