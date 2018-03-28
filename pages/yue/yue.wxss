@@ -1,0 +1,17 @@
+/* pages/yue/yue.wxss */
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  background-color: #fff;
+}
+.text_a {
+  font-size: 14px;
+}
+.jine {
+  padding-top: 20rpx;
+  font-size: 24px;
+  color: #fe4e3f;
+}
