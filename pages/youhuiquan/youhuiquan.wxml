@@ -1,0 +1,20 @@
+<!--pages/youhuiquan/youhuiquan.wxml-->
+<view class='bg'>
+  <block wx:for="{{menu_b}}">
+    <view class='list_c'>
+        <view class='tw'>
+          <image class="tpa" src="{{item.tpUrl}}" mode="aspectFill">
+          </image>
+          <view class='bj'>
+            <view>
+              <text class='text_b'>{{item.title}}</text>
+              <text class='text_c'>{{item.new}} </text>
+            </view>
+            <view class='aaa'>
+              <button type="defaule" bindtap="modalcnt" class='btn'>一键领取</button>
+            </view>
+          </view>
+        </view>
+    </view>
+  </block>
+</view>
