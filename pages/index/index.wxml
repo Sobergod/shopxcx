@@ -4,10 +4,9 @@
   <view class='sousuo'>
     <input class='seek' placeholder="搜索商品" auto-focus/>
     <text class='iconfont icon-fangdajing'></text>
-    <view>
+    <view bindtap=''>
       <text class='iconfont icon-wujiaoxingkong'></text>
-      <text class='shoucang'> 我的收藏
-    </text>
+      <text class='shoucang'> 我的收藏</text>
     </view>
   </view>
 

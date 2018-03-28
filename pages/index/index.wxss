@@ -207,6 +207,7 @@
 }
 
 .tpa {
+  margin-right: 10rpx;
   width: 100px;
   height: 100px;
 }
@@ -272,6 +273,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20rpx 0;
+  margin-bottom: 30rpx;
   background-color: #fff; 
   font-size: 14px;
   color: #888;
