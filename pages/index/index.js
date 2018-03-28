@@ -40,9 +40,6 @@ Page({
    */
   onReachBottom: function () {
     var num = this.data.num
-    wx.showLoading({
-      title: '加载中...',
-    });
     num += 3;
     this._getGoodsList(num);
     this.setData({
