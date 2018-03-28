@@ -8,6 +8,7 @@
     <view class='list'>
       <image bindtap='goToDetail' data-gid="{{item.shopid}}" class="image_frame" src="{{item.shopphoto}}" mode="aspectFill"></image>
       <text class='text_name'>{{item.shopname}}</text>
+      <view class='shopinfo'>{{item.shopinfo}}</view>
       <view class='fenlan'>
         <view>
           <text class='text_money'>￥{{item.shopmoney}}</text>

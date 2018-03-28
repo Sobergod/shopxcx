@@ -58,9 +58,10 @@ Page({
       },
       onSuccess: function (res) {
         console.log(res);
-        var photomore = [];
+        var photomore = [],
+            shopphotos = [];
+        shopphotos = res.data[0].shopphotos.split(',');
         photomore = res.data[0].photomore.split(',');
-        console.log(photomore);
         that.setData({
         })
       },

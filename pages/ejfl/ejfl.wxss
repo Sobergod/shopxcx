@@ -1,2 +1,9 @@
 /* pages/ejfl/ejfl.wxss */
-@import "../../pages/shoucang/shoucang.wxss"
+@import "../../pages/shoucang/shoucang.wxss";
+.shopinfo {
+  padding: 0 10rpx;
+  font-size: 12px;
+  height: 4em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
