@@ -43,8 +43,12 @@ Page({
     wx.showLoading({
       title: '加载中...',
     });
+    num += 3;
     this._getGoodsList(num);
-
+    this.setData({
+      isLoading: 1,
+      num:num,
+    })
   },
   // 获得所有商品
   _getGoodsList: function (num) {
@@ -65,9 +69,15 @@ Page({
       },
       onComplete: function () {
         wx.hideLoading();
-        that.setData({
-          isLoading: 0
-        })
+        if (that.data.num >= that.data.allNum) {
+          that.setData({
+            isLoading: 2,
+          })
+        } else {
+          that.setData({
+            isLoading: 0,
+          })
+        }
       }
     })
   },
@@ -92,17 +102,4 @@ Page({
       }
     });
   },
-  // 下拉刷新条件判断
-  _checkOnBottomStatus(num) {
-    if (num >= this.data.allNum) {
-      this.setData({
-        isLoading: 2,
-      })
-    } else {
-      this.setData({
-        isLoading: 0,
-      })
-    } 
-    
-  }
 })

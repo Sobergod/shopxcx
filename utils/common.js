@@ -67,6 +67,7 @@ function netWorkRequest(request) {
     },
     reFail: function (res) {
       st_fail("加载失败");
+      wx.hideLoading();
     },
     reComplete: function (res) {
       st_success("加载成功");
@@ -105,9 +106,7 @@ function checkArrsLen(arr) {
     } else {
       return false;
     }
-  } else {
-    console.log(1);
-  }
+  } 
 }
 
 // 对象升序排序方法
