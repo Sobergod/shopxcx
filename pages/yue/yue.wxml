@@ -1,0 +1,5 @@
+<!--pages/yue/yue.wxml-->
+<view class='center'>
+  <text class='text_a'>剩余金额（元）</text>
+  <text class='jine'>{{yue}}</text>
+</view>

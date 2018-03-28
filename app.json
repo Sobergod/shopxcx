@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/pingjia/pingjia",
+    "pages/youhuiquan/youhuiquan",
+    "pages/yue/yue",
     "pages/huodongfenlei/huodongfenlei",  
     "pages/shoucang/shoucang",
     "pages/gouwuche/gouwuche",

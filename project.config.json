@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
-	"appid": "wxd6b38042a7934a23",
-	"projectname": "XGYX",
+	"appid": "touristappid",
+	"projectname": "shopxcx",
 	"condition": {
 		"search": {
 			"current": -1,
