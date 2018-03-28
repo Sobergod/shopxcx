@@ -134,7 +134,6 @@ function st_success(msg) {
   })
 }
 function st_fail(msg) {
-  console.log(1);
   wx.showToast({
     title: msg,
     image: "../images/fail.png",
