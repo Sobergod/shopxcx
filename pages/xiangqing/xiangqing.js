@@ -67,6 +67,7 @@ Page({
       },
     })
   },
+  // 添加购物车
   addInCartTab: function () {
     let goodsItem = {
       id: this.data.id,

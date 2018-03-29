@@ -34,23 +34,13 @@ function addCart(item, counts) {
   }
   execSetStorage(cartData);
 }
-// 修改商品数量
-function _changeCartCount(id, counts) {
-  var cartData = getCartData(),
-    hasInfo = _cartHasThisItem(id, cartData);
-  if (hasInfo.index != -1) {
-    if (hasInfo.data.counts > 1) {
-      cartData[hasInfo.index].counts += counts;
-    }
-  }
-  execSetStorage(cartData);  //更新本地缓存
-}
+
 // 数量增加
 function addCount(id) {
   var cartData = getCartData(),
     hasInfo = _cartHasThisItem(id, cartData);
   if (hasInfo.index != -1) {
-      cartData[hasInfo.index].counts += 1;
+    cartData[hasInfo.index].counts += 1;
   }
   execSetStorage(cartData);  //更新本地缓存
 }
@@ -64,6 +54,41 @@ function minuCount(id) {
     }
   }
   execSetStorage(cartData);  //更新本地缓存
+}
+
+// 计算购物车商品总价格
+function getTotalPrice(data) {
+  var len = data.length,
+    account = 0,
+    // 购买商品总个数
+    selectedCounts = 0,
+    selectedTypeCounts = 0;
+  let multiple = 100;
+  for (let i = 0; i < len; i++) {
+    if (data[i].selectStatus) {
+      account +=
+        data[i].counts * multiple * Number(data[i].price) * multiple;
+      selectedCounts += data[i].counts;
+      selectedTypeCounts++;
+    }
+  }
+  return {
+    selectedCounts: selectedCounts,
+    selectedTypeCounts: selectedTypeCounts,
+    account: account / (multiple * multiple)
+  }
+}
+// 删除单个商品
+function deleteOneGoods() {
+}
+// 删除全部商品
+function deleteAllGoods() {
+}
+// 单选
+function selectOne() {
+}
+// 全选
+function selectAll() {
 }
 /**
  *  判断购物车中是否有商品
@@ -85,27 +110,16 @@ function _cartHasThisItem(id, arr) {
   }
   return result;
 }
-// 计算购物车商品总价格
-function getTotalPrice(total, count) {
-  var cartList = wx.getStorageSync(cartName) || [];
-  if (cartList.length > 0) {
-    for (var i in cartList) {
-      totla += Number(cartList[i].price);
-      count += Number(cartList[i].count);
+// 修改商品数量
+function _changeCartCount(id, counts) {
+  var cartData = getCartData(),
+    hasInfo = _cartHasThisItem(id, cartData);
+  if (hasInfo.index != -1) {
+    if (hasInfo.data.counts > 1) {
+      cartData[hasInfo.index].counts += counts;
     }
   }
-}
-// 删除单个商品
-function deleteOneGoods() {
-}
-// 删除全部商品
-function deleteAllGoods() {
-}
-// 单选
-function selectOne() {
-}
-// 全选
-function selectAll() {
+  execSetStorage(cartData);  //更新本地缓存
 }
 module.exports = {
   getTotalPrice,

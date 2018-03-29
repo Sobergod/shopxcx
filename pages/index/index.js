@@ -91,7 +91,7 @@ Page({
   },
   // 所有分类
   _getAllClassifications: function () {
-    var that = this;
+    var that = this; 
     common.netWorkRequest({
       url: "xfenlei",
       onSuccess: function (res) {
