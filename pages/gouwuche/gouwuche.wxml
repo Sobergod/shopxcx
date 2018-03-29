@@ -1,5 +1,5 @@
 <!--pages/gouwuche/gouuche.wxml-->
-<view wx:if="{{!cartHasGoods}}" class='Container'>
+<view wx:if="{{goodsItem.length == 0}}" class='Container'>
   <view class='list'>
     <block wx:for="{{menu}}">
       <view class='list_a'>
@@ -9,7 +9,7 @@
       </view>
     </block>
   </view>
-  <navigator  url="../index/index"  open-type="switchTab" hover-class="other-navigator-hover">
+  <navigator url="../index/index" open-type="switchTab" hover-class="other-navigator-hover">
     <button class='btn'>
       去逛逛
     </button>
@@ -22,51 +22,59 @@
     <view wx:else bindtap='optionsTap'>完成</view>
   </view>
   <view class='goods-list-wrap'>
-     <block wx:for="{{goodsItem}}"> 
-    <view class='goods-item'>
-      <icon wx:if='{{item.selectStatus}}' type='success'></icon>
-      <icon wx:else type='circle'></icon>
-      <image src='{{item.photo}}' class='goods-img'></image>
-      <view class='goods-describe'>
-        <view class='c1'>
-          <view class='goods-name'>{{item.name}}</view>
-          <view class='goods-des'>{{item.brief}}</view>
+    <block wx:for="{{goodsItem}}">
+      <view class='goods-item'>
+        <view class="selectbtn" bindtap='selectOneTap' data-gid='{{item.id}}' data-status='{{item.selectStatus}}'>
+          <icon wx:if='{{item.selectStatus}}' type='success' size='20' color="#D4237A"></icon>
+          <icon wx:else type='circle' size='20' color="#D4237A"></icon>
         </view>
-        <view class='goods-other'>
-          <view class='price'>{{item.price}}</view>
-          <view class='choose-count'>x{{item.counts}}</view>
+        <image src='{{item.picture}}' class='goods-img'></image>
+        <view class='goods-describe'>
+          <view class='c1'>
+            <view class='goods-name'>{{item.name}}</view>
+            <view class='goods-des'>{{item.brief}}</view>
+          </view>
+          <view class='goods-other'>
+            <view class='price'>{{item.price}}</view>
+            <view class='choose-count'>x{{item.counts}}</view>
+          </view>
+        </view>
+        <view class='{{isOption? "default":"goods-options"}}'>
+          <view class='count-control'>
+            <view class='a' bindtap='addCountTab' data-gid='{{item.id}}'>+</view>
+            <view class='c'>{{item.counts}}</view>
+            <view class='a' wx:if="{{item.counts > 1}}" bindtap='minCountTab' data-gid='{{item.id}}'>-</view>
+            <view class='a' wx:else>-</view>
+          </view>
+          <view class='del-btn' bindtap='deleteTap' data-gid='{{item.id}}'>
+            <text>删除</text>
+          </view>
         </view>
       </view>
-      <view class='{{isOption? "default":"goods-options"}}'>
-        <view class='count-control'>
-          <view class='a' bindtap='addCountTab' data-gid='{{item.id}}'>+</view>
-          <view class='c'>{{item.counts}}</view>
-          <view class='a' bindtap='minCountTab' data-gid='{{item.id}}'>-</view>
-        </view>
-        <view class='del-btn'>
-          <text>删除</text>
-        </view>
-      </view>
-    </view>
-     </block> 
+    </block>
   </view>
   <view class='goods-list-footer'>
     <view class='flex-start'>
-      <icon wx:if='{{1}}' type='success'></icon>
-      <icon wx:else type='circle'></icon>
+      <view class='selectbtn' bindtap='selectAllTap' data-status='{{selectedTypeCounts == goodsItem.length? "true":"false"}}'>
+        <icon wx:if='{{selectedTypeCounts == goodsItem.length}}' type='success' size='20' color="#D4237A"></icon>
+        <icon wx:else type='circle' size='20' color="#D4237A"></icon>
+      </view>
       <text>全选</text>
     </view>
     <view>
       <text>合计:</text>
-      <text class='red'>￥{{0.01}}</text>
+      <text class='red'>￥{{totalPrice}}</text>
     </view>
-    <view class='flex-end'>
-      <view wx:if="{{!isOption}}" class='delete'>
+    <view class='flex-end' style='background:{{selectedTypeCounts > 0?"#FFA3CB":"#888"}}'>
+      <view wx:if="{{!isOption}}" class='delete' bindtap='deleteAllTap'>
         删除
       </view>
-      <view wx:else class='to-pay'>
+      <view wx:elif="{{isOption && selectedTypeCounts > 0}}" class='to-pay'>
         <text>结算</text>
-        <text>({{1}})</text>
+        <text>({{selectedTypeCounts}})</text>
+      </view>
+      <view wx:else>
+        <text>暂未选择商品</text>
       </view>
     </view>
   </view>

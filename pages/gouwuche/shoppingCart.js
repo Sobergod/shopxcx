@@ -78,18 +78,6 @@ function getTotalPrice(data) {
     account: account / (multiple * multiple)
   }
 }
-// 删除单个商品
-function deleteOneGoods() {
-}
-// 删除全部商品
-function deleteAllGoods() {
-}
-// 单选
-function selectOne() {
-}
-// 全选
-function selectAll() {
-}
 /**
  *  判断购物车中是否有商品
  *  param {int} id 商品id
@@ -110,6 +98,20 @@ function _cartHasThisItem(id, arr) {
   }
   return result;
 }
+// 删除
+function deleteGoods(ids) {
+  if (!(ids instanceof Array)) {  
+    ids = [ids];
+  }
+  var cartData = getCartData();
+  for (let i = 0; i < ids.length; i++) {
+    var hasInfo = _cartHasThisItem(ids[i], cartData);
+    if (hasInfo.index != -1) {
+      cartData.splice(hasInfo.index,1)
+    }
+  }
+  execSetStorage(cartData);  //更新本地缓存
+}
 // 修改商品数量
 function _changeCartCount(id, counts) {
   var cartData = getCartData(),
@@ -124,10 +126,8 @@ function _changeCartCount(id, counts) {
 module.exports = {
   getTotalPrice,
   addCart,
-  deleteOneGoods,
-  deleteAllGoods,
   addCount,
   minuCount,
-  selectOne,
-  selectAll
+  getCartData,
+  deleteGoods
 }

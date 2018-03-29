@@ -31,10 +31,9 @@
 }
 
 .image_frame {
-  width: 150rpx;
-  height: 150rpx;
+  width: 100rpx;
+  height: 100rpx;
   border: 0;
-  border-radius: 50%;
   margin-bottom: 20rpx;
 }
 
@@ -67,11 +66,14 @@
   margin-bottom: 60px;
 }
 .goods-item {
-  position: relative;
   display: flex;
+  position: relative;
   padding: 10rpx 15rpx;
   border-bottom: 1px solid #eee;
   background-color: #fff;
+}
+.selectbtn {
+  display: flex;
 }
 icon {
   align-self: center;
@@ -80,12 +82,16 @@ icon {
   width: 80px;
   height: 80px;
   margin: 0 20rpx;
-  border: 1px solid #000;
 }
 .goods-describe { 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 70%;
+}
+.goods-des {
+  color: #888;
+  font-size: 10px;
 }
 .c1 {
   font-size: 14px;
@@ -153,7 +159,7 @@ icon {
   padding: 0 10rpx;
   width: 30%;
   height: 100%;
-  background-color: red;
+  background-color: #FFA3CB;
 }
 /*购物车底部  */
 .goods-list-footer {
