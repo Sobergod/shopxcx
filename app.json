@@ -1,15 +1,9 @@
 {
   "pages": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     "pages/qbdd/qbdd",
     "pages/mine/mine",
     "pages/yjfk/yjfk",
->>>>>>> cee6c70504d1111955c1ac12e7d978daa309cc79
-=======
     "pages/xiepingjia/xiepingjia",
->>>>>>> 2f7c87b4395512d682b16cf9d59bf97a9f0dc42a
     "pages/index/index",
     "pages/yjfk/yjfk",
     "pages/xiangqing/xiangqing",
