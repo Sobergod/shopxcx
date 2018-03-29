@@ -21,13 +21,15 @@ Page({
   onShow: function () {
     var goodsItem = shoppingCart.getCartData(),
       cal = shoppingCart.getTotalPrice(goodsItem);
-    console.log(goodsItem);
-    console.log(cal);
     this.setData({
       goodsItem: goodsItem,
       totalPrice: cal.account.toFixed(2),
       selectedTypeCounts: cal.selectedTypeCounts
     })
+  },
+  /*离开页面时，更新本地缓存*/
+  onHide: function () {
+    shoppingCart.execSetStorage(this.data.goodsItem);
   },
   // 单选按钮
   selectOneTap: function (event) {
@@ -58,19 +60,29 @@ Page({
   // 部分删除事件
   deleteAllTap: function (e) {
     var goodsItem = this.data.goodsItem,
-      ids = [];
-    for (let i = 0; i < goodsItem.length; i++) {
-      if (goodsItem[i].selectStatus == true) {
-        ids.push(goodsItem[i].id);
-        var index = this._getProductIndexById(goodsItem[i].id);
-        console.log(index);
-        goodsItem.splice(index, 1);
-      }
-    }
-    // this._resetCartData();
+      that = this;
+    wx.showModal({
+      title: '确认',
+      content: '确认删除吗?',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          for (let i = goodsItem.length - 1; i >= 0; i--) {
+            if (goodsItem[i].selectStatus == true) {
+              var index = that._getProductIndexById(goodsItem[i].id);
+              this.data.goodsItem.splice(index, 1);
+            }
+          }
+        }
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+
+    this._resetCartData();
   },
   // 删除全部商品
-  selectDeleteAll :function() {
+  selectDeleteAll: function () {
     var a = [];
 
   },
@@ -137,4 +149,10 @@ Page({
       })
     }
   },
+  // 结算
+  subbmitOrder: function (e) {
+    wx.navigateTo({
+      url: '',
+    })
+  }
 })

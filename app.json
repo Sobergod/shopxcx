@@ -1,11 +1,8 @@
 {
   "pages": [
-    "pages/qbdd/qbdd",
-    "pages/mine/mine",
-    "pages/yjfk/yjfk",
-    "pages/xiepingjia/xiepingjia",
     "pages/index/index",
     "pages/yjfk/yjfk",
+    "pages/xiepingjia/xiepingjia",
     "pages/xiangqing/xiangqing",
     "pages/huodong/huodong",
     "pages/huodongfenlei/huodongfenlei",  

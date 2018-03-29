@@ -69,7 +69,7 @@
       <view wx:if="{{!isOption}}" class='delete' bindtap='deleteAllTap'>
         删除
       </view>
-      <view wx:elif="{{isOption && selectedTypeCounts > 0}}" class='to-pay'>
+      <view wx:elif="{{isOption && selectedTypeCounts > 0}}" class='to-pay' bindtap='subbmitOrder'>
         <text>结算</text>
         <text>({{selectedTypeCounts}})</text>
       </view>

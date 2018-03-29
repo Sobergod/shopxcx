@@ -5,10 +5,20 @@
 var cartName = "cart"
 
 //  获取购物车缓存
-function getCartData() {
+function getCartData(flag) {
   var res = wx.getStorageSync(cartName);
   if (!res) {
     res = [];
+  }
+  //在下单的时候过滤不下单的商品，
+  if (flag) {
+    var newRes = [];
+    for (let i = 0; i < res.length; i++) {
+      if (res[i].selectStatus) {
+        newRes.push(res[i]);
+      }
+    }
+    res = newRes;
   }
   return res;
 }
@@ -100,14 +110,14 @@ function _cartHasThisItem(id, arr) {
 }
 // 删除
 function deleteGoods(ids) {
-  if (!(ids instanceof Array)) {  
+  if (!(ids instanceof Array)) {
     ids = [ids];
   }
   var cartData = getCartData();
   for (let i = 0; i < ids.length; i++) {
     var hasInfo = _cartHasThisItem(ids[i], cartData);
     if (hasInfo.index != -1) {
-      cartData.splice(hasInfo.index,1)
+      cartData.splice(hasInfo.index, 1)
     }
   }
   execSetStorage(cartData);  //更新本地缓存
@@ -129,5 +139,6 @@ module.exports = {
   addCount,
   minuCount,
   getCartData,
-  deleteGoods
+  deleteGoods,
+  execSetStorage
 }

@@ -135,8 +135,7 @@ icon {
 }
 .count-control {
   display: flex;
-  flex-direction: row;
-  align-self: flex-end;
+  margin-left: 10px;
   padding: 20rpx 0;
   font-size: 14px;
   color: #000;
