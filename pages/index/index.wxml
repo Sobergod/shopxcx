@@ -4,7 +4,7 @@
   <view class='sousuo'>
     <input class='seek' placeholder="搜索商品" auto-focus/>
     <text class='iconfont icon-fangdajing'></text>
-    <view bindtap=''>
+    <view bindtap='collectionTab'>
       <text class='iconfont icon-wujiaoxingkong'></text>
       <text class='shoucang'> 我的收藏</text>
     </view>
@@ -38,9 +38,6 @@
       </view>
     </block>
   </scroll-view>
-
-
-
   <!--导航-->
   <view class='bg'>
     <view class='box'>
@@ -56,7 +53,7 @@
       </view>
       <view class='list'>
         <block wx:for="{{menu}}" wx:key="{{item.fid}}">
-          <view class='list_a'>
+          <view class='list_a' bindtap='goToSubListTab' data-efid='{{item.fid}}'>
             <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
             </image>
             <text class='text_a'>{{item.name}}</text>
@@ -100,7 +97,7 @@
             <view class='pic-name'>
               <image class="tpa" src="{{item.shopphoto}}">
               </image>
-              <view>
+              <view class='text-wrap'>
                 <view class='text_b text-overflow'>{{item.shopname}}</view>
                 <view class='text_c'>{{item.new}} </view>
               </view>
@@ -115,7 +112,7 @@
     </block>
     <view class='loading' wx:if='{{isLoading==1}}'>
       <image src='../../images/loading.gif'></image>
-      <text>加载中</text>
+      <text>加载中...</text>
     </view>
     <view wx:elif='{{isLoading==0}}' class='loading'>
       <text>下拉加载更多..</text>

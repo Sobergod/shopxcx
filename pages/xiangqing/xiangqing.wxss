@@ -95,6 +95,18 @@ swiper {
   height: 60rpx;
 }
 /* 产品说明结束 */
+.xx {
+  display: flex;
+  justify-content: center;
+  padding: 15rpx;
+  margin-bottom: 15rpx;
+  background-color: #fff;
+}
+.image_frame {
+  width: 100%;
+}
+
+/* 商品信息结束 */
 .tabber {
   position:fixed;
   bottom:0; 

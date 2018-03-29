@@ -1,16 +1,21 @@
-<view class='center'>
-<block wx:for="{{list}}">
-  <view class='list'>
-    <image class="image_frame" src="{{item.photo}}" mode="aspectFill"></image>
-    <text class='text_name'>{{item.name}}</text>
-    <view class='fenlan'>
-    <view >
-      <text class='text_money'>{{item.money}}</text></view>
-      <view>
-      <text class='iconfont icon-wujiaoxingkong'></text>
-      <text class='text_shoucang'>{{item.shoucang}}</text>
+<view class='no-collection' wx:if='{{!hasCollection}}'>
+  <image src='../../images/nocollection.png'></image>
+  <view>暂无收藏</view>
+</view>
+<view wx:else class='center'>
+  <block wx:for="{{collectionList}}">
+    <view class='list'>
+      <image class="image_frame" src="{{item.photo}}" mode="aspectFill"></image>
+      <text class='text_name'>{{item.name}}</text>
+      <view class='fenlan'>
+        <view>
+          <text class='text_money'>{{item.money}}</text>
+        </view>
+        <view bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
+          <text class='iconfont icon-wujiaoxingkong'></text>
+          <text class='text_shoucang'>{{item.shoucang}}</text>
+        </view>
       </view>
     </view>
-  </view>
   </block>
 </view>

@@ -1,5 +1,6 @@
 .btn-group {
-  display: flex;
+  display: inline-flex;
+  width: 20%;
   flex-direction: column;
   justify-content: center;
 }
@@ -203,10 +204,10 @@
 
 .tw {
   display: flex;
-  justify-content: space-between;
 }
 
 .tpa {
+  display: inline-block;
   margin-right: 10rpx;
   width: 100px;
   height: 100px;
@@ -220,8 +221,13 @@
   background-color: #fff;
 }
 
+.text-wrap {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
 .text_b {
-  display: flex;
   font-size: 14px;
 }
 
@@ -231,7 +237,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-} */
+}  */
 
 .text_c {
   display: flex;
@@ -250,7 +256,6 @@
 
 .pic-name {
   width: 75%;
-  display: flex;
 }
 
 .btn {
@@ -269,21 +274,24 @@
   padding: 10rpx 25rpx 30rpx 25rpx;
   font-weight: bold;
 }
+
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20rpx 0;
   margin-bottom: 30rpx;
-  background-color: #fff; 
+  background-color: #fff;
   font-size: 14px;
   color: #888;
 }
+
 .loading image {
   margin-right: 5px;
   width: 20px;
   height: 20px;
 }
+
 /* 更多商品结束 */
 
 /* 转换过的字体图标 */

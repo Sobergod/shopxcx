@@ -12,7 +12,7 @@
   <view class='list'>
     <block wx:for="{{menu_a}}" wx:key="{{item.shopid}}">
       <view class='list_a'>
-        <navigator url="../xiangqing/xiangqing?fid={{item.shopid}}'" hover-class="other-navigator-hover"><image class="image_frame" src="{{item.shopphoto}}" mode="aspectFill">
+        <navigator url="../xiangqing/xiangqing?gid={{item.shopid}}" hover-class="other-navigator-hover"><image class="image_frame" src="{{item.shopphoto}}" mode="aspectFill">
         </image></navigator>
         <text class='text_a'>{{item.shopname}}</text>
         <text class='text_b'>{{item.shopinfo}}</text>

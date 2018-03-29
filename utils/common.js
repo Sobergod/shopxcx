@@ -17,7 +17,7 @@ function myRequest(url, params, method, onSuccess, onFail, onComplete) {
   function onFail() { }
   function onComplete() { }
   var params = arguments[1] ? arguments[1] : {};
-  var method = arguments[2] ? arguments[2] : "GET";
+  var method = arguments[2] ? arguments[2] : "POST";
   var onSuccess = arguments[3] ? arguments[3] : onSuccess();
   var onFail = arguments[4] ? arguments[4] : onFail();
   var onComplete = arguments[5] ? arguments[5] : onComplete();
@@ -54,12 +54,12 @@ function myRequest(url, params, method, onSuccess, onFail, onComplete) {
 * param {function} NetWork.complete 完成执行
 */
 function netWorkRequest(request) {
-  
+
   // 初始化request
   var NetWork = {
     url: request.url,
     data: request.params ? request.params : {},
-    method: request.method ? request.method : "GET",
+    method: request.method ? request.method : "POST",
     reSuccess: function (res) {
       wx.showLoading({
         title: '加载中',
@@ -85,7 +85,9 @@ function netWorkRequest(request) {
     },
     method: NetWork.method,
     success: function (res) {
-      request.onSuccess ? request.onSuccess(res) : NetWork.reSuccess(res);
+      if (res.statusCode == 200) {
+        request.onSuccess ? request.onSuccess(res) : NetWork.reSuccess(res);
+      }
     },
     fail: function (res) {
       wx.hideLoading();
@@ -96,7 +98,7 @@ function netWorkRequest(request) {
       request.onComplete ? request.onComplete(res) : NetWork.reComplete(res);
     },
   })
-} 
+}
 
 // 判断数组长度
 function checkArrsLen(arr) {
@@ -106,7 +108,7 @@ function checkArrsLen(arr) {
     } else {
       return false;
     }
-  } 
+  }
 }
 
 // 对象升序排序方法

@@ -40,16 +40,18 @@
     <text class='pp'>{{sp_fenlei}}</text>
   </view>
 
-  <view class='pj'>
+  <view class='xx'>
     <text class='pj_left'>商品信息</text>
-    <view>
-      
-    </view>
   </view>
+    <view>
+      <block wx:for="{{menu}}" wx:key="{{item.fid}}">
+        <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
+        </image>
+      </block>
+    </view>
 
   <!-- 用户评价结束 -->
   <view>
-
   </view>
 
   <view class='kg'>

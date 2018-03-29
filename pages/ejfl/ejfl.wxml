@@ -1,0 +1,22 @@
+<!--pages/ejfl/ejfl.wxml-->
+<view class='no-collection' wx:if='{{!hasList}}'>
+  <image src='../../images/nocollection.png'></image>
+  <view>暂无商品</view>
+</view>
+<view wx:else class='center'>
+  <block wx:for="{{subGoodsList}}" wx:key="{{item.shopid}}">
+    <view class='list'>
+      <image bindtap='goToDetail' data-gid="{{item.shopid}}" class="image_frame" src="{{item.shopphoto}}" mode="aspectFill"></image>
+      <text class='text_name'>{{item.shopname}}</text>
+      <view class='fenlan'>
+        <view>
+          <text class='text_money'>￥{{item.shopmoney}}</text>
+        </view>
+        <view bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
+          <text class='iconfont icon-wujiaoxingkong'></text>
+          <text class='text_shoucang'>{{item.shoucang}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
