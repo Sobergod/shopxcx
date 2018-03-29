@@ -65,11 +65,17 @@ Page({
         var photomore = [];
         // photomore = res.data[0].photomore.split(',');
         // console.log(photomore);
+        var photomore = [],
+            shopphotos = [];
+        shopphotos = res.data[0].shopphotos.split(',');
+        photomore = res.data[0].photomore.split(',');
+
         that.setData({
         })
       },
     })
   },
+  // 添加购物车
   addInCartTab: function () {
     let goodsItem = {
       id: this.data.id,

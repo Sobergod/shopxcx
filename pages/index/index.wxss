@@ -152,7 +152,7 @@
 }
 
 .text_a {
-  font-size: 25rpx;
+  font-size: 14px;
 }
 
 .list_b {
