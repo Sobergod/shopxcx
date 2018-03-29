@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/yjfk/yjfk",
     "pages/index/index",
     "pages/xiangqing/xiangqing",
@@ -14,7 +15,6 @@
     "pages/hufu/hufu",
     "pages/fenlei/fenlei",
     "pages/qiandao/qiandao",
-    "pages/mine/mine",
     "pages/huodong/huodong",
     "pages/kefu/kefu"
   ],

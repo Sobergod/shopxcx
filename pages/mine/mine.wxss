@@ -124,29 +124,33 @@
 }
 
 /* 列表 */
-
+.center {
+  background-color: #fff;
+}
 .list-item {
   display: flex;
-  /* flex-direction: row; *//* justify-content: space-between; */
   align-items: center;
-  background-color: #fff;
   height: 80rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid#c4c4c4;
+  
 }
 
 .list {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  padding-right: 80rpx;
-  padding: 20rpx 100rpx 15rpx 20rpx;
-  border-bottom: 1px solid#c4c4c4;
+  padding: 20rpx 0;
 }
 
 .item-text {
   color: #505050;
   font-size: 14px;
   text-align: center;
-  /* line-height: 2.5; */
+}
+
+.icon-arrow-right {
+  color: #888;
 }
 
 .item-text_a {
@@ -161,7 +165,6 @@
 .list_left {
   width: 15%;
   text-align: center;
-  margin-left: 50rpx;
   color: #d81e06;
 }
 
