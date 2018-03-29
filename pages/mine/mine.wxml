@@ -16,10 +16,12 @@
 
   <view class="navs">
     <view class='navs_left'>
-      <view class='nav-item'>
-        <text class='iconfont icon-qiandao'></text>
-        <text class="title" src="{{title}}" mode="aspectFill">签到</text>
-      </view>
+      <navigator url="../qiandao/qiandao" hover-class="other-navigator-hover">
+        <view class='nav-item'>
+          <text class='iconfont icon-qiandao'></text>
+          <text class="title" src="{{title}}" mode="aspectFill">签到</text>
+        </view>
+      </navigator>
       <view class='nav-item'>
         <text class='iconfont icon-daifukuan'></text>
         <text class="title" src="{{title}}" mode="aspectFill">待付款</text>
@@ -58,6 +60,7 @@
       <view class='list_left'>
         <text class='iconfont icon-star'></text>
       </view>
+      
       <view class='list'>
         <text class="item-text">我的收藏</text>
         <text class='iconfont icon-arrow-right'></text>

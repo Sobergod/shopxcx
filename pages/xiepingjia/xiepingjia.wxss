@@ -1,0 +1,39 @@
+.zan-font-16 {
+  background-color: #fff;
+  padding: 20rpx;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  font-size: 14px;
+}
+.zan-c-gray-dark {
+  font-size: 17px;
+}
+.zan-c-gray-dark_a {
+  font-size: 14px;
+}
+.zan-c-red {
+  font-size: 17px;
+  color: #ffa3cc;
+}
+.center {
+  padding: 20rpx;
+}
+.section__title {
+  padding-bottom: 20rpx;
+  font-size: 14px;
+}
+.section_input  {
+  height: 300rpx;
+  width: 100%;
+  border-radius: 10rpx;
+  padding-top: 20rpx;
+  background-color: #fff;
+  font-size:14px; 
+}
+.btn-area {
+  padding-top: 50rpx;
+}
+.btn {
+  background-color: #ffa3cc;
+  color: #fff;
+}
