@@ -25,23 +25,23 @@
     "color": "#a9b7b7",
     "selectedColor": "#11cd6e",
     "borderStyle": "white",
-    "backgroundColor": "#1b1b1b",
+    "backgroundColor": "#ffffff",
     "list": [
       {
-        "selectedIconPath": "images/zy.png",
-        "iconPath": "images/zy.png",
+        "iconPath": "images/home.png",
+        "selectedIconPath":"images/homesel.png",
         "pagePath": "pages/index/index"
         
       },
       {
-        "selectedIconPath": "images/gwc.png",
-        "iconPath": "images/gwc.png",
+        "iconPath": "images/car.png",
+        "selectedIconPath": "images/carsel.png",
         "pagePath": "pages/gouwuche/gouwuche"
         
       },
       {
-        "selectedIconPath": "images/gr.png",
-        "iconPath": "images/gr.png",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/usersel.png",
         "pagePath": "pages/mine/mine"
         
       }
