@@ -1,0 +1,20 @@
+<!--pages/xiepingjia/xiepingjia.wxml-->
+<view>
+  <view class="zan-font-16 my-ib" bindtap="myStarChoose">
+    <text>描述相符 </text>
+    <block wx:for="{{starMap}}">
+      <text wx:if="{{star>=index+1}}" style="padding-right: .5em" class="zan-c-red" data-star="{{index+1}}">★</text>
+      <text wx:if="{{star<index+1}}" style="padding-right: .5em" class="zan-c-gray-dark" data-star="{{index+1}}">☆</text>
+    </block>
+  <text class="zan-c-gray-dark_a">{{starMap[star-1]}}</text>
+  </view>
+  <view class='center'>
+    <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
+      <textarea class='section_input' placeholder="宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧！"></textarea>
+      <view class="btn-area">
+        <button form-type="submit" class='btn'>提交</button>
+      </view>
+    </form>
+  </view>
+  <!--★-->
+</view>

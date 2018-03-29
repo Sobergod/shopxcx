@@ -1,25 +1,32 @@
 {
   "pages": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "pages/qbdd/qbdd",
     "pages/mine/mine",
     "pages/yjfk/yjfk",
 >>>>>>> cee6c70504d1111955c1ac12e7d978daa309cc79
+=======
+    "pages/xiepingjia/xiepingjia",
+>>>>>>> 2f7c87b4395512d682b16cf9d59bf97a9f0dc42a
     "pages/index/index",
+    "pages/yjfk/yjfk",
     "pages/xiangqing/xiangqing",
+    "pages/huodong/huodong",
+    "pages/huodongfenlei/huodongfenlei",  
+    "pages/ejfl/ejfl",
+    "pages/qbdd/qbdd",
+    "pages/mine/mine",
     "pages/tab/tab",
     "pages/youhuiquan/youhuiquan",
     "pages/pingjia/pingjia",
     "pages/yue/yue",
-    "pages/ejfl/ejfl",
-    "pages/huodongfenlei/huodongfenlei",  
     "pages/shoucang/shoucang",
     "pages/gouwuche/gouwuche",
     "pages/hufu/hufu",
     "pages/fenlei/fenlei",
     "pages/qiandao/qiandao",
-    "pages/huodong/huodong",
     "pages/kefu/kefu"
   ],
   "window": {
