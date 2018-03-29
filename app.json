@@ -1,5 +1,11 @@
 {
   "pages": [
+<<<<<<< HEAD
+=======
+    "pages/qbdd/qbdd",
+    "pages/mine/mine",
+    "pages/yjfk/yjfk",
+>>>>>>> cee6c70504d1111955c1ac12e7d978daa309cc79
     "pages/index/index",
     "pages/xiangqing/xiangqing",
     "pages/tab/tab",
@@ -13,7 +19,6 @@
     "pages/hufu/hufu",
     "pages/fenlei/fenlei",
     "pages/qiandao/qiandao",
-    "pages/mine/mine",
     "pages/huodong/huodong",
     "pages/kefu/kefu"
   ],

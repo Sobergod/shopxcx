@@ -44,7 +44,7 @@
   </view>
 
   <!-- 横向列表结束 -->
-  <view>
+  <view class='center'>
     <view class="list-item">
       <view class='list_left'>
         <text class='iconfont icon-chongzhi'></text>
