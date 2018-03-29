@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/qbdd/qbdd",
     "pages/mine/mine",
     "pages/yjfk/yjfk",
     "pages/index/index",
