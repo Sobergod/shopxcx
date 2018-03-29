@@ -29,12 +29,6 @@
   </view>
 
   <!-- 用户评价结束 -->
-  <view class='pj'>
-    <text class='pj_left'>产品规格</text>
-    <text class='iconfont icon-arrow-right'></text>
-  </view>
-
-  <!-- 产品规格结束 -->
   <view class='sm'>
     <view class='pp'>
       <text class='pp'>{{pp}}</text>
@@ -45,16 +39,31 @@
     <text class='pp'>{{sp_site}}</text>
     <text class='pp'>{{sp_fenlei}}</text>
   </view>
+
+  <view class='xx'>
+    <text class='pj_left'>商品信息</text>
+  </view>
+    <view>
+      <block wx:for="{{menu}}" wx:key="{{item.fid}}">
+        <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
+        </image>
+      </block>
+    </view>
+
+  <!-- 用户评价结束 -->
+  <view>
+  </view>
+
   <view class='kg'>
   </view>
   <!-- 产品说明结束 -->
 
   <view class='kg'></view>
   <view class='tabber'>
-    <view class='a'>
+    <button class='w'>
       <text class='iconfont icon-kefu'></text>
       <text>客服</text>
-    </view>
+    </button>
     <view class='a'>
       <text class='iconfont icon-wujiaoxingkong'></text>
       <text>收藏</text>
@@ -64,7 +73,7 @@
       <text>购物车</text>
     </view>
     <view class='a'>
-      <text class='iconfont icon-kefu'></text>
+      <text class='iconfont icon-gouwuche'></text>
       <text>拼团</text>
     </view>
     <view class='b' bindtap='addInCartTab'>

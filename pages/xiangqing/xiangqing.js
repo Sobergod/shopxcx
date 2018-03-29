@@ -11,6 +11,10 @@ Page({
       '../../images/two.jpg',
       '../../images/two.jpg',
     ],
+    menu:[
+      { photo:"../../images/two.jpg"},
+      { photo: "../../images/two.jpg" },
+    ],
     indicatorDots: true,
     autoplay: false,
     interval: 5000,
@@ -58,10 +62,14 @@ Page({
       },
       onSuccess: function (res) {
         console.log(res);
+        var photomore = [];
+        // photomore = res.data[0].photomore.split(',');
+        // console.log(photomore);
         var photomore = [],
             shopphotos = [];
         shopphotos = res.data[0].shopphotos.split(',');
         photomore = res.data[0].photomore.split(',');
+
         that.setData({
         })
       },

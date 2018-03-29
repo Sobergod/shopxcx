@@ -1,8 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/ejfl/ejfl",
+    "pages/xiangqing/xiangqing",
+    "pages/tab/tab",
     "pages/youhuiquan/youhuiquan",
+    "pages/index/index",
+    "pages/pingjia/pingjia",
+    "pages/yue/yue",
+    "pages/ejfl/ejfl",
     "pages/huodongfenlei/huodongfenlei",  
     "pages/shoucang/shoucang",
     "pages/gouwuche/gouwuche",
@@ -10,9 +14,7 @@
     "pages/fenlei/fenlei",
     "pages/qiandao/qiandao",
     "pages/mine/mine",
-    "pages/tab/tab",
     "pages/huodong/huodong",
-    "pages/xiangqing/xiangqing",
     "pages/kefu/kefu"
   ],
   "window": {
