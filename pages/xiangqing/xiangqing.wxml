@@ -72,10 +72,6 @@
       <text class='iconfont icon-gouwuche'></text>
       <text>购物车</text>
     </view>
-    <view class='a'>
-      <text class='iconfont icon-gouwuche'></text>
-      <text>拼团</text>
-    </view>
     <view class='b' bindtap='addInCartTap'>
       <text class='tabber_cs'>加入购物车</text>
     </view>

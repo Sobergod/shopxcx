@@ -125,7 +125,7 @@ swiper {
 }
 
 .a {
-  flex-basis: 15%;
+  flex-basis: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,8 +148,12 @@ swiper {
   box-shadow: unset;
 }
 
+button::after {
+  border: none;
+}
+
 .b {
-  flex-basis: 20%;
+  flex-basis: 22%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,7 +167,7 @@ swiper {
 }
 
 .c {
-  flex-basis: 20%;
+  flex-basis: 22%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,10 +236,11 @@ swiper {
 }
 
 /* 未转换的字体图标 */
+
 .icon-shoucang {
   color: #888;
 }
-.icon-shoucang1 {
-  color: #FAD91F;
-}
 
+.icon-shoucang1 {
+  color: #fad91f;
+}
