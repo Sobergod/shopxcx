@@ -3,3 +3,6 @@
   <text class='text_a'>剩余金额（元）</text>
   <text class='jine'>{{yue}}</text>
 </view>
+<view class='anniu'>
+  <button class='btn'>充值</button>
+</view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/yue/yue",
     "pages/gmxx/gmxx",
     "pages/xiepingjia/xiepingjia",
     "pages/index/index",
@@ -13,7 +14,6 @@
     "pages/tab/tab",
     "pages/youhuiquan/youhuiquan",
     "pages/pingjia/pingjia",
-    "pages/yue/yue",
     "pages/shoucang/shoucang",
     "pages/gouwuche/gouwuche",
     "pages/hufu/hufu",

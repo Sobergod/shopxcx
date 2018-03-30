@@ -25,7 +25,7 @@
       <!-- 图文结束 -->
       <view class='num'>
         <text>购买数量</text>
-        <text>购买数量</text>
+        <text>×{{item.num}}</text>
       </view>
       <view class='num'>
         <text>配送方式</text>
