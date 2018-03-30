@@ -1,0 +1,8 @@
+<!--pages/hongbao/hongbao.wxml-->
+<view class='center'>
+  <text class='text_a'>红包剩余金额（元）</text>
+  <text class='jine'>{{yue}}</text>
+</view>
+<view class='anniu'>
+  <text>累计领取：{{lingqu}}元</text>
+</view>

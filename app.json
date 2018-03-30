@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/hongbao/hongbao",
+    "pages/yue/yue",
+    "pages/gmxx/gmxx",
     "pages/zuji/zuji",
     "pages/shoucang/shoucang",
     "pages/ejfl/ejfl",
     "pages/mine/mine",
-    "pages/yue/yue",
-    "pages/gmxx/gmxx",
     "pages/xiepingjia/xiepingjia",
     "pages/index/index",
     "pages/xiangqing/xiangqing",
