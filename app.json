@@ -1,25 +1,26 @@
 {
   "pages": [
+    "pages/zuji/zuji",
+    "pages/shoucang/shoucang",
+    "pages/ejfl/ejfl",
+    "pages/mine/mine",
     "pages/yue/yue",
     "pages/gmxx/gmxx",
     "pages/xiepingjia/xiepingjia",
     "pages/index/index",
-    "pages/yjfk/yjfk",
     "pages/xiangqing/xiangqing",
     "pages/huodong/huodong",
     "pages/huodongfenlei/huodongfenlei",  
-    "pages/ejfl/ejfl",
     "pages/qbdd/qbdd",
-    "pages/mine/mine",
     "pages/tab/tab",
     "pages/youhuiquan/youhuiquan",
     "pages/pingjia/pingjia",
-    "pages/shoucang/shoucang",
     "pages/gouwuche/gouwuche",
     "pages/hufu/hufu",
     "pages/fenlei/fenlei",
     "pages/qiandao/qiandao",
-    "pages/kefu/kefu"
+    "pages/kefu/kefu",
+    "pages/yjfk/yjfk"
   ],
   "window": {
     "backgroundTextStyle": "light",
