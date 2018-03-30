@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/ptlb/ptlb",
     "pages/xiangqing/xiangqing",
     "pages/index/index",
     "pages/hongbao/hongbao",
