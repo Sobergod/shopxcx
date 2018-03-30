@@ -61,30 +61,13 @@ Page({
   deleteAllTap: function (e) {
     var goodsItem = this.data.goodsItem,
       that = this;
-    wx.showModal({
-      title: '确认',
-      content: '确认删除吗?',
-      showCancel: true,
-      success: function (res) {
-        if (res.confirm) {
-          for (let i = goodsItem.length - 1; i >= 0; i--) {
-            if (goodsItem[i].selectStatus == true) {
-              var index = that._getProductIndexById(goodsItem[i].id);
-              this.data.goodsItem.splice(index, 1);
-            }
-          }
-        }
-      },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-
+    for (let i = goodsItem.length - 1; i >= 0; i--) {
+      if (goodsItem[i].selectStatus == true) {
+        var index = this._getProductIndexById(goodsItem[i].id);
+        this.data.goodsItem.splice(index, 1);
+      }
+    }
     this._resetCartData();
-  },
-  // 删除全部商品
-  selectDeleteAll: function () {
-    var a = [];
-
   },
   // 获得商品下标
   _getProductIndexById: function (id) {
