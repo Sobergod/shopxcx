@@ -1,0 +1,169 @@
+/* pages/gmxx/gmxx.wxss */
+
+.list {
+  display: flex;
+  padding: 10rpx 30rpx 10rpx 30rpx;
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+
+.pic {
+  flex: 3;
+  height: 180rpx;
+}
+
+.pic image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.con {
+  flex: 6;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.type1 {
+  padding-top: 10rpx;
+  display: block;
+  font-size: 30rpx;
+  color: #323232;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.type2 {
+  display: flex;
+  font-size: 28rpx;
+  color: #666;
+  width: 100%;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.type3 {
+  padding-top: 20rpx;
+  font-size: 12px;
+  color: #dfa855;
+}
+
+.price {
+  /* flex: 3; */
+  font-size: 30rpx;
+  color: #ff5701;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.price1 {
+  position: absolute;
+  padding-top: 10rpx;
+  right: 0;
+  top: 0;
+}
+
+.number {
+  position: absolute;
+  right: 0;
+  top: 70rpx;
+}
+
+/* 图文结束 */
+
+.num {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx;
+  background-color: #fff;
+  font-size: 12px;
+  border-bottom: 1px solid#eee;
+  color: #323232;
+}
+
+.liuyan {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #fff;
+  font-size: 12px;
+  border-bottom: 1px solid#eee;
+  color: #323232;
+}
+
+.wenzi {
+  width: 20%;
+}
+
+.seek {
+  margin-left: 40rpx;
+}
+
+.heji {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30rpx;
+  background-color: #fff;
+  font-size: 12px;
+  color: #323232;
+}
+
+.hehi_right {
+  padding-left: 30rpx;
+}
+
+/* 列表结束 */
+
+.btn {
+  margin-top: 30rpx;
+  border-radius: 0;
+  background-color: #fff;
+  color: #343434;
+  font-size: 14px;
+}
+
+button::after {
+  border: none;
+}
+
+/* 优惠券结束 */
+
+.tabber {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+}
+
+.gongji {
+  line-height: 50px;
+  font-size: 14px;
+  padding-right: 30rpx;
+}
+
+.c {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5700;
+}
+
+.tabber_hs {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* 底部结束 */
