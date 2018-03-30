@@ -48,26 +48,4 @@ Page({
   onReachBottom: function () {
 
   },
-
-  // 获取所有收藏商品
-  _selectAllCollection:function() {
-      var that = this;
-      common.netWorkRequest({
-        url:'Xshopping/collect_sel',
-        params:{
-          openid:wx.getStorageSync('openId')
-        },
-        onSuccess:function(res) {
-          if(res.data = '') {
-            that.setData({
-              hasCollection: false
-            })
-          } else {
-            that.setData({
-              collectionList: res.data
-            })
-          }
-        }
-      })
-  }
 })

@@ -232,3 +232,10 @@ swiper {
 }
 
 /* 未转换的字体图标 */
+.icon-shoucang {
+  color: #888;
+}
+.icon-shoucang1 {
+  color: #FAD91F;
+}
+

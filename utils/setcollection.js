@@ -2,11 +2,13 @@ var common = require('common.js');
 /**
  * 添加和取消收藏方法
  * param {int} collectionId 当前商品id
- */ 
+ */
 function addCollection(collectionId) {
   var collection = {};
+  console.log(collectionId);
   collection.shopid = collectionId;
   collection.openid = wx.getStorageSync('openId');
+  console.log(collection.openid);
   _setCollectionApi('Xshopping/collect_add', collection);
 }
 function removeCollection(collectionId) {
@@ -21,11 +23,18 @@ function removeCollection(collectionId) {
  * param {obj} collectionData 参数
  */
 function _setCollectionApi(url, collectionData) {
-  common.newWorkRequest({
+  common.netWorkRequest({
     url: url,
     params: collectionData,
     onSuccess: function (res) {
       console.log(res);
+    },
+    onComplete: function (res) {
+      wx.hideLoading();
     }
   })
+}
+module.exports = {
+  addCollection,
+  removeCollection
 }

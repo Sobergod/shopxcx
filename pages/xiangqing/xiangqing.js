@@ -1,6 +1,7 @@
 // pages/xiangqing/xiangqing.js
 var shoppingCart = require("../../pages/gouwuche/shoppingCart.js");
 var common = require("../../utils/common.js");
+var collection = require("../../utils/setcollection.js");
 Page({
 
   /**
@@ -35,6 +36,8 @@ Page({
       sp_site: "商品产地：中国大陆",
       sp_fenlei: "分类：组合装",
     },
+    allCollection: [],
+    status: true,
     id: 1,
     name: "净颜清透祛痘保湿乳",//y
     jj: "保湿  祛痘  洁净毛孔",//y
@@ -52,6 +55,62 @@ Page({
     var gid = options.gid;
     this._getGoodsItem(gid);
   },
+  onShow() {
+    this.getAllCollection();
+  },
+  // 查询所有收藏
+  getAllCollection: function () {
+    var that = this;
+    common.netWorkRequest({
+      url: 'Xshopping/collect_sel',
+      params: {
+        openid: wx.getStorageSync('openId')
+      },
+      onSuccess: function (res) {
+        console.log(res);
+        var status =
+          that.checkGoodsIsCollect(
+            that.data.goodsItem.shopid,
+            res.data[0]
+          );
+        that.setData({
+          status: !status,
+        })
+      },
+      onComplete: function (res) {
+      },
+    });
+  },
+  // 判断当前商品是否被收藏
+  checkGoodsIsCollect: function (gid, collection) {
+    if (collection) {
+      for (let i = 0; i < collection.length; i++) {
+        if (gid == collection[i].shopid) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+  },
+  // 添加和删除收藏
+  changeCollectionTap: function (e) {
+    var gid = e.currentTarget.dataset.gid,
+      status = e.currentTarget.dataset.status;
+    if (this.data.status) {
+      collection.addCollection(gid);
+      console.log(this.data.status);
+      this.setData({
+        status: false,
+      });
+    } else {
+      console.log(status);
+      collection.removeCollection(gid);
+      this.setData({
+        status: true,
+      });
+    }
+  },
   // 跳转购物车页面 
   gotoCart: function () {
     wx.switchTab({
@@ -68,7 +127,6 @@ Page({
         shopid: gid,
       },
       onSuccess: function (res) {
-        console.log(res);
         var photomore = [],
           shopphotos = [],
           goodsItem = res.data[0];
@@ -81,7 +139,7 @@ Page({
     })
   },
   // 添加购物车
-  addInCartTab: function () {
+  addInCartTap: function () {
     common.st_success("添加购物车成功");
     let goodsItem = {
       id: this.data.goodsItem.shopid,
@@ -93,4 +151,5 @@ Page({
     let counts = this.data.counts
     shoppingCart.addCart(goodsItem, counts);
   },
+
 })

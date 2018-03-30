@@ -61,9 +61,7 @@ function netWorkRequest(request) {
     data: request.params ? request.params : {},
     method: request.method ? request.method : "POST",
     reSuccess: function (res) {
-      wx.showLoading({
-        title: '加载中',
-      })
+      wx.hideLoading();
     },
     reFail: function (res) {
       st_fail("加载失败");
@@ -90,11 +88,9 @@ function netWorkRequest(request) {
       }
     },
     fail: function (res) {
-      wx.hideLoading();
       request.onFail ? request.onFail(res) : NetWork.reFail(res);
     },
     complete: function (res) {
-      wx.hideLoading();
       request.onComplete ? request.onComplete(res) : NetWork.reComplete(res);
     },
   })

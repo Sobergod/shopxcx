@@ -13,8 +13,8 @@ App({
           },
           method: 'POST',
           onSuccess: function (res) {
-            if (res.data.statusCode == 200) {
-              wx.setStorageSync('onpenId', res.data.openid)
+            if (res.statusCode == 200) {
+              wx.setStorageSync('openId', res.data.openid)
             }
           }
         })
