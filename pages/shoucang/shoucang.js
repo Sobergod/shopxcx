@@ -8,44 +8,61 @@ Page({
    */
   data: {
 
-    collectionList: [
-      {photo: ['../../images/two.jpg'], name: ["玻尿酸晚安睡眠面膜aaaaaa"], money: ["￥99"], shoucang: "取消收藏"},
-      { photo: ['../../images/one_02.jpg'], name: ["玻尿酸晚安睡眠面膜"], money: ["￥99"], shoucang: "取消收藏" },
-      { photo: ['../../images/one_02.jpg'], name: ["玻尿酸晚安睡眠面膜"], money: ["￥99"], shoucang: "取消收藏" },
-      { photo: ['../../images/one_02.jpg'], name: ["玻尿酸晚安睡眠面膜"], money: ["￥99"], shoucang: "取消收藏" }
-    ],
+    collectionList: [],
     hasCollection: false,
   },
+  detailTap:function(e) {
+    var gid = e.currentTarget.dataset.gid
+    wx.navigateTo({
+      url: '../../pages/xiangqing/xiangqing?gid='+gid,
+    })
+  },
   // 取消收藏
-  cancelCollectionTab:function(e) {
+  cancelCollectionTab: function (e) {
     var collectionId = e.currentTarget.dataset.gid;
     setCollection.removeCollection(collectionId);
-    this._selectAllCollection();
+    this.getAllCollection();
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._selectAllCollection();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getAllCollection();
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  // 查询所有收藏
+  getAllCollection: function () {
+    var that = this;
+    common.netWorkRequest({
+      url: 'Xshopping/collect_sel',
+      params: {
+        openid: wx.getStorageSync('openId')
+      },
+      onSuccess: function (res) {
+      },
+      onComplete: function (res) {
+        if (res.data instanceof Array) {
+          var collection = [];
+          for (let i = 0; i < res.data.length; i++) {
+            collection.push(res.data[i][0]);
+          }
+          that.setData({
+            collectionList: collection,
+            hasCollection: true
+          })
+        } else {
+          that.setData({
+            collectionList: [],
+            hasCollection: false
+          })
+        }
+        wx.hideLoading();
+      },
+    });
   },
 })

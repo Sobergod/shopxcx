@@ -11,23 +11,24 @@ Page({
     ],
     menu_a: [
       { title_b: "今天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第二天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第三天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第四天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第五天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第六天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第七天", picUrl: "../../images/qiandao.jpg", },
-      { title_b: "第八天", picUrl: "../../images/qiandao.jpg", }
+      { title_b: "第2天", picUrl: "../../images/qiandao.jpg", },
+      { title_b: "第3天", picUrl: "../../images/qiandao.jpg", },
+      { title_b: "第4天", picUrl: "../../images/qiandao.jpg", },
+      { title_b: "第5天", picUrl: "../../images/qiandao.jpg", },
+      { title_b: "第6天", picUrl: "../../images/qiandao.jpg", },
+      { title_b: "第7天", picUrl: "../../images/qiandao.jpg", },
+      { title_b: "第8天", picUrl: "../../images/qiandao.jpg", }
     ]
   },
   onLoad: function () {
     common.netWorkRequest({
-      url: 'Xuser /money_qd',
+      url: 'Xuser/money_hb',
       method:'POST',
       params:{
-        openid: wx.getStorageSync('onpenId'),
+        openid: wx.getStorageSync('openId'),
       },
       onSuccess:function(res) {
+        wx.hideLoading();
         console.log(res);
       }
     })

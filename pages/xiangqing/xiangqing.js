@@ -67,11 +67,10 @@ Page({
         openid: wx.getStorageSync('openId')
       },
       onSuccess: function (res) {
-        console.log(res);
         var status =
           that.checkGoodsIsCollect(
             that.data.goodsItem.shopid,
-            res.data[0]
+            res.data
           );
         that.setData({
           status: !status,
@@ -85,10 +84,8 @@ Page({
   checkGoodsIsCollect: function (gid, collection) {
     if (collection) {
       for (let i = 0; i < collection.length; i++) {
-        if (gid == collection[i].shopid) {
+        if (gid == collection[i][0].shopid) {
           return true;
-        } else {
-          return false;
         }
       }
     }
@@ -99,13 +96,12 @@ Page({
       status = e.currentTarget.dataset.status;
     if (this.data.status) {
       collection.addCollection(gid);
-      console.log(this.data.status);
       this.setData({
         status: false,
       });
     } else {
-      console.log(status);
       collection.removeCollection(gid);
+      console.log(1);
       this.setData({
         status: true,
       });

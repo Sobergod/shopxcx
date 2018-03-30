@@ -18,12 +18,12 @@
         <text class='text_b'>{{item.shopinfo}}</text>
         <view class='list_b'>
           <view>
-            <text class='text_a'>{{item.shopmoney}}</text>
+            <text class='text_a'>￥{{item.shopmoney}}</text>
           </view>
-          <view>
+          <!-- <view>
             <text class='iconfont icon-wujiaoxingkong'></text>
             <text class='text_a'>{{shoucang}}</text>
-          </view>
+          </view> -->
         </view>
       </view>
     </block>

@@ -4,18 +4,18 @@
 </view>
 <view wx:else class='center'>
   <block wx:for="{{collectionList}}">
-    <view class='list'>
-      <image class="image_frame" src="{{item.photo}}" mode="aspectFill"></image>
-      <text class='text_name'>{{item.name}}</text>
-      <view class='fenlan'>
-        <view>
-          <text class='text_money'>{{item.money}}</text>
-        </view>
-        <view bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
-          <text class='iconfont icon-wujiaoxingkong'></text>
-          <text class='text_shoucang'>{{item.shoucang}}</text>
+      <view class='list'>
+        <image class="image_frame" src="{{item.shopphoto}}" mode="aspectFill"  bindtap='detailTap' data-gid='{{item.shopid}}'></image>
+        <text class='text_name'>{{item.shopname}}</text>
+        <view class='fenlan'>
+          <view>
+            <text class='text_money'>￥{{item.shopmoney}}</text>
+          </view>
+          <view class='quxiao' bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
+            <text class='iconfont icon-shoucang1'></text>
+            <text class='text_shoucang'>取消收藏</text>
+          </view>
         </view>
       </view>
-    </view>
   </block>
 </view>

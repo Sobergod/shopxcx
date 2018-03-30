@@ -47,25 +47,29 @@
 
   <!-- 横向列表结束 -->
   <view class='center'>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-chongzhi'></text>
+    <navigator url='../../pages/yue/yue'>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-chongzhi'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">充值</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
+
       </view>
-      <view class='list'>
-        <text class="item-text">充值</text>
-        <text class='iconfont icon-arrow-right'></text>
+    </navigator>
+    <navigator url='../../pages/shoucang/shoucang'>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-star'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">我的收藏</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
       </view>
-    </view>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-star'></text>
-      </view>
-      
-      <view class='list'>
-        <text class="item-text">我的收藏</text>
-        <text class='iconfont icon-arrow-right'></text>
-      </view>
-    </view>
+    </navigator>
     <view class="list-item">
       <view class='list_left'>
         <text class='iconfont icon-pintuan'></text>
@@ -75,33 +79,28 @@
         <text class='iconfont icon-arrow-right'></text>
       </view>
     </view>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-hongbao'></text>
+    <navigator url='../../pages/qiandao/qiandao'>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-hongbao'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">我的红包</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
       </view>
-      <view class='list'>
-        <text class="item-text">我的红包</text>
-        <text class='iconfont icon-arrow-right'></text>
+    </navigator>
+    <navigator url='../../pages/youhuiquan/youhuiquan'>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-youhuiquan'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">优惠券</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
       </view>
-    </view>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-youhuiquan'></text>
-      </view>
-      <view class='list'>
-        <text class="item-text">优惠券</text>
-        <text class='iconfont icon-arrow-right'></text>
-      </view>
-    </view>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-yue01'></text>
-      </view>
-      <view class='list'>
-        <text class="item-text">账户余额</text>
-        <text class='iconfont icon-arrow-right'></text>
-      </view>
-    </view>
+    </navigator>
     <view class="list-item">
       <view class='list_left'>
         <text class='iconfont icon-kefu'></text>
@@ -111,15 +110,17 @@
         <text class='iconfont icon-arrow-right'></text>
       </view>
     </view>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-jiaoyin'></text>
+    <navigator url=''>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-jiaoyin'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">足记</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
       </view>
-      <view class='list'>
-        <text class="item-text">足记</text>
-        <text class='iconfont icon-arrow-right'></text>
-      </view>
-    </view>
+    </navigator>
     <view class="list-item">
       <view class='list_left'>
         <text class='iconfont icon-dizhi'></text>
@@ -129,15 +130,17 @@
         <text class='iconfont icon-arrow-right'></text>
       </view>
     </view>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-yijian'></text>
+    <navigator url='../../pages/yjfk/yjfk'>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-yijian'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">意见反馈</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
       </view>
-      <view class='list'>
-        <text class="item-text">意见反馈</text>
-        <text class='iconfont icon-arrow-right'></text>
-      </view>
-    </view>
+    </navigator>
   </view>
   <!-- 列表结束 -->
 </view>

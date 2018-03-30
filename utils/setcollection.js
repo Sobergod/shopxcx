@@ -5,10 +5,8 @@ var common = require('common.js');
  */
 function addCollection(collectionId) {
   var collection = {};
-  console.log(collectionId);
   collection.shopid = collectionId;
   collection.openid = wx.getStorageSync('openId');
-  console.log(collection.openid);
   _setCollectionApi('Xshopping/collect_add', collection);
 }
 function removeCollection(collectionId) {

@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/yue/yue",
     "pages/gmxx/gmxx",
     "pages/xiepingjia/xiepingjia",
-    "pages/index/index",
     "pages/yjfk/yjfk",
     "pages/xiangqing/xiangqing",
     "pages/huodong/huodong",
