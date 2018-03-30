@@ -11,14 +11,15 @@ Page({
       '../../images/two.jpg',
       '../../images/two.jpg',
     ],
-    menu:[
-      { photo:"../../images/two.jpg"},
+    menu: [
+      { photo: "../../images/two.jpg" },
       { photo: "../../images/two.jpg" },
     ],
     indicatorDots: true,
     autoplay: false,
     interval: 5000,
     duration: 1000,
+    goodsItem: {},
     dataItem: {
       id: 1,
       name: "净颜清透祛痘保湿乳",//y
@@ -51,6 +52,12 @@ Page({
     var gid = options.gid;
     this._getGoodsItem(gid);
   },
+  // 跳转购物车页面 
+  gotoCart: function () {
+    wx.switchTab({
+      url: '../../pages/gouwuche/gouwuche',
+    })
+  },
   // 查询单个商品
   _getGoodsItem: function (gid) {
     var goodsNum,
@@ -62,27 +69,26 @@ Page({
       },
       onSuccess: function (res) {
         console.log(res);
-        var photomore = [];
-        // photomore = res.data[0].photomore.split(',');
-        // console.log(photomore);
         var photomore = [],
-            shopphotos = [];
-        shopphotos = res.data[0].shopphotos.split(',');
-        photomore = res.data[0].photomore.split(',');
-
+          shopphotos = [],
+          goodsItem = res.data[0];
+        goodsItem.shopPhotos = res.data[0].shopphotos.split(',');
+        goodsItem.photoMore = res.data[0].photomore.split(',');
         that.setData({
+          goodsItem: goodsItem
         })
       },
     })
   },
   // 添加购物车
   addInCartTab: function () {
+    common.st_success("添加购物车成功");
     let goodsItem = {
-      id: this.data.id,
-      name: this.data.name,
-      price: this.data.price,
-      brief: this.data.jj,
-      picture: this.data.picture
+      id: this.data.goodsItem.shopid,
+      name: this.data.goodsItem.shopname,
+      price: this.data.goodsItem.shopmoney,
+      brief: this.data.goodsItem.shopinfo,
+      picture: this.data.goodsItem.shopphoto
     }
     let counts = this.data.counts
     shoppingCart.addCart(goodsItem, counts);

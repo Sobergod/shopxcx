@@ -1,6 +1,6 @@
 <!--pages/ejfl/ejfl.wxml-->
 <view class='no-collection' wx:if='{{!hasList}}'>
-  <image src='../../images/nocollection.png'></image>
+  <image src='../../images/nodetails.png'></image>
   <view>暂无商品</view>
 </view>
 <view wx:else class='center'>

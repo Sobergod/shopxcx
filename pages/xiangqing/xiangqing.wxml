@@ -2,7 +2,7 @@
 <view class='Container'>
   <view class='lunbo'>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{imgUrls}}">
+      <block wx:for="{{goodsItem.shopPhotos}}">
         <swiper-item>
           <image src="{{item}}" class="slide-image" width="355" height="150" />
         </swiper-item>
@@ -13,12 +13,12 @@
   <!--轮播图结束-->
   <view class='navber'>
     <view class='navber_left'>
-      <text class='left_top'>{{name}}</text>
-      <text class='left_bottom'>{{jj}}</text>
+      <text class='left_top'>{{goodsItem.shopname}}</text>
+      <text class='left_bottom'>{{goodsItem.shopInfo}}</text>
     </view>
     <view class='navber_right'>
-      <text class='right_top'>{{price}}</text>
-      <text class='right_bottom' style='text-decoration: line-through'>{{yj}}</text>
+      <text class='right_top'>{{goodsItem.shopmoney}}</text>
+      <text class='right_bottom' style='text-decoration: line-through'>{{goodsItem.oldmoney}}</text>
     </view>
   </view>
 
@@ -44,8 +44,8 @@
     <text class='pj_left'>商品信息</text>
   </view>
     <view>
-      <block wx:for="{{menu}}" wx:key="{{item.fid}}">
-        <image class="image_frame" src="{{item.photo}}" mode="aspectFill">
+      <block wx:for="{{goodsItem.photoMore}}" wx:key="{{item.fid}}">
+        <image class="image_frame" src="{{item}}" mode="aspectFill">
         </image>
       </block>
     </view>
@@ -68,7 +68,7 @@
       <text class='iconfont icon-wujiaoxingkong'></text>
       <text>收藏</text>
     </view>
-    <view class='a'>
+    <view class='a' bindtap='gotoCart'>
       <text class='iconfont icon-gouwuche'></text>
       <text>购物车</text>
     </view>

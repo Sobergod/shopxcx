@@ -2,7 +2,7 @@ var common = require('common.js');
 /**
  * 添加和取消收藏方法
  * param {int} collectionId 当前商品id
- */
+ */ 
 function addCollection(collectionId) {
   var collection = {};
   collection.shopid = collectionId;
