@@ -24,6 +24,17 @@ Page({
       }
     })
   } ,
+  tijiao: function () {
+    wx.showActionSheet({
+      itemList: ['余额支付', '微信支付'],
+      success: function (res) {
+        console.log(res.tapIndex)
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
