@@ -1,0 +1,17 @@
+<!--pages/ptlb/ptlb.wxml-->
+<view  class='center'>
+  <block wx:for="{{collectionList}}">
+    <view class='list'>
+      <image class="image_frame" src="{{item.photo}}" mode="aspectFill"></image>
+      <text class='text_name'>{{item.name}}</text>
+      <view class='fenlan'>
+        <view>
+          <text class='text_money'>{{item.money}}</text>
+        </view>
+        <view bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
+          <button class='pintuan'>去拼团</button>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
