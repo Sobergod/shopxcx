@@ -25,7 +25,7 @@
       <!-- 图文结束 -->
       <view class='num'>
         <text>购买数量</text>
-        <text>×{{item.num}}</text>
+        <text>购买数量</text>
       </view>
       <view class='num'>
         <text>配送方式</text>
@@ -39,9 +39,21 @@
         <text>共{{item.num}}件商品</text>
         <text class='hehi_right'>小计：{{item.price}}</text>
       </view>
-      <view class='youhuiquan'>
-        <button bindtap="actioncnt" class='btn'>请选择：优惠券</button>  
-      </view>
+      <radio-group >
+      <view class='abc'>
+        <radio class='anniu' bindchange="radioChange">
+          <view class='youhuiquan'>
+            <button bindtap="actioncnt" class='btn'>优惠券</button>
+          </view>
+        </radio>
+        <radio class='anniu'>
+        <view class='hongbao'>
+          <button  class='btn'>红包减免</button>
+        </view>
+        </radio>
+        </view>
+      </radio-group>
+
     </view>
   </view>
 
@@ -49,7 +61,7 @@
   <view class='tabber'>
     <text class='gongji'>合计：{{item.jine}}</text>
     <view class='c'>
-      <text class='tabber_hs'>提交订单</text>
+      <text bindtap="tijiao" class='tabber_hs'>提交订单</text>
     </view>
   </view>
 

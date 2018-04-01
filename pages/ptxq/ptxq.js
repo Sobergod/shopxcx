@@ -141,17 +141,20 @@ Page({
     })
   },
   // 添加购物车
-  addInCartTap: function () {
-    common.st_success("添加购物车成功");
-    let goodsItem = {
-      id: this.data.goodsItem.shopid,
-      name: this.data.goodsItem.shopname,
-      price: this.data.goodsItem.shopmoney,
-      brief: this.data.goodsItem.shopinfo,
-      picture: this.data.goodsItem.shopphoto
-    }
-    let counts = this.data.counts
-    shoppingCart.addCart(goodsItem, counts);
+  // addInCartTap: function () {
+  //   common.st_success("添加购物车成功");
+  //   let goodsItem = {
+  //     id: this.data.goodsItem.shopid,
+  //     name: this.data.goodsItem.shopname,
+  //     price: this.data.goodsItem.shopmoney,
+  //     brief: this.data.goodsItem.shopinfo,
+  //     picture: this.data.goodsItem.shopphoto
+  //   }
+  //   let counts = this.data.counts
+  //   shoppingCart.addCart(goodsItem, counts);
+  // },
+  addInCarTap: function (){
+    
   },
 
 })
