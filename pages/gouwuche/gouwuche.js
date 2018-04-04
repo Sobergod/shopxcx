@@ -132,10 +132,13 @@ Page({
       })
     }
   },
-  // 结算
+  /**
+   * param totalPrice 总金额
+   * param cart 购物车
+   */
   subbmitOrder: function (e) {
     wx.navigateTo({
-      url: '',
-    })
+      url: '../../pages/gmxx/gmxx?account=' + this.data.totalPrice +'&from=cart',
+    });
   }
 })

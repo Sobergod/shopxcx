@@ -1,16 +1,20 @@
 /* pages/pingjia/pingjia.wxss */
+
 .center {
   padding-top: 10rpx;
 }
+
 .center_list {
   margin-bottom: 10rpx;
 }
+
 .list {
   display: flex;
   justify-content: space-between;
   padding: 20rpx;
   background-color: #fff;
 }
+
 .news {
   display: flex;
   flex-direction: column;
@@ -19,21 +23,25 @@
   font-size: 12px;
   color: #171717;
 }
+
 .list_a {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .image_frame {
   width: 100rpx;
   height: 100rpx;
   border-radius: 100rpx;
 }
+
 .text_a {
   padding-left: 20rpx;
   font-size: 14px;
-  color:  #5c5c5c;
+  color: #5c5c5c;
 }
+
 .text_b {
   display: flex;
   justify-content: center;
@@ -41,6 +49,19 @@
   font-size: 12px;
   color: #919191;
 }
+
 .text_c {
-padding-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.image_pct {
+  margin: 10px 10px;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.img-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

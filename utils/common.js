@@ -32,6 +32,7 @@ function myRequest(url, params, method, onSuccess, onFail, onComplete) {
     },
     method: method,
     success: function (res) {
+      wx.hideLoading();
       onSuccess(res);
     },
     fail: function (res) {
@@ -83,7 +84,9 @@ function netWorkRequest(request) {
     },
     method: NetWork.method,
     success: function (res) {
-      if (res.statusCode == 200) {
+      var code = res.statusCode.toString();
+      var startChar = code.charAt(0);
+      if (startChar == '2') {
         request.onSuccess ? request.onSuccess(res) : NetWork.reSuccess(res);
       }
     },
@@ -133,7 +136,7 @@ function st_success(msg) {
 function st_fail(msg) {
   wx.showToast({
     title: msg,
-    image: "../images/fail.png",
+    image: "../../images/fail.png",
   })
 }
 function st_complete(msg) {

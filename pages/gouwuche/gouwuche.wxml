@@ -66,10 +66,10 @@
       <text class='red'>￥{{totalPrice}}</text>
     </view>
     <view class='flex-end' style='background:{{selectedTypeCounts > 0?"#FFA3CB":"#888"}}'>
-      <view wx:if="{{!isOption}}" class='delete' bindtap='deleteAllTap'>
+      <view wx:if="{{!isOption}}" class='flex-end delete' bindtap='deleteAllTap'>
         删除
       </view>
-      <view wx:elif="{{isOption && selectedTypeCounts > 0}}" class='to-pay' bindtap='subbmitOrder'>
+      <view wx:elif="{{isOption && selectedTypeCounts > 0}}" class='flex-end to-pay' bindtap='subbmitOrder'>
         <text>结算</text>
         <text>({{selectedTypeCounts}})</text>
       </view>

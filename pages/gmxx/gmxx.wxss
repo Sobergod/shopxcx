@@ -1,5 +1,24 @@
 /* pages/gmxx/gmxx.wxss */
-
+.m-container {
+  margin-bottom: 60px;
+}
+.address {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #fff;
+  font-size: 14px;
+  color: #888;
+}
+.info-content text{
+  margin-right: 20rpx;
+  font-size: 14px;
+  color: #000;
+}
+.addAddress {
+  padding: 20rpx;
+  text-align: center;
+}
 .list {
   display: flex;
   padding: 10rpx 30rpx 10rpx 30rpx;
@@ -12,7 +31,8 @@
 
 .pic {
   flex: 3;
-  height: 180rpx;
+  width: 100px;
+  height: 100px;
 }
 
 .pic image {
@@ -56,18 +76,13 @@
 }
 
 .price {
-  /* flex: 3; */
+  display: flex;
   font-size: 30rpx;
   color: #ff5701;
-  box-sizing: border-box;
-  position: relative;
 }
 
 .price1 {
-  position: absolute;
-  padding-top: 10rpx;
-  right: 0;
-  top: 0;
+  align-self: flex-end;
 }
 
 .number {
@@ -82,6 +97,7 @@
   display: flex;
   justify-content: space-between;
   padding: 30rpx;
+  margin-bottom: 20rpx;
   background-color: #fff;
   font-size: 12px;
   border-bottom: 1px solid#eee;

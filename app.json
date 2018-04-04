@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/ptxq/ptxq",
-    "pages/xiangqing/xiangqing",
     "pages/gmxx/gmxx",
-    "pages/index/index",
+    "pages/mineyhq/mineyhq",
+    "pages/pay-result/pay-result",
+    "pages/ptxq/ptxq",
     "pages/qiandao/qiandao",
     "pages/hongbao/hongbao",
     "pages/mine/mine",

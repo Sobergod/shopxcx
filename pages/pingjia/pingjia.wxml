@@ -12,8 +12,11 @@
       </view>
       <view class='news'>
         <text class='text_c'>{{item.wenben}}</text>
-        <image class="image_pct" src="{{item.pct}}" mode="aspectFill">
-        </image>
+        <view class='img-con'>
+          <block wx:for='{{item.pct}}' wx:for-item='dimg'>
+            <image bindtap='preViewImgTap' data-alist='{{item.pct}}' data-src='{{dimg}}' class="image_pct" src="{{dimg}}" mode="aspectFill"></image>
+          </block>
+        </view>
       </view>
     </view>
   </block>

@@ -107,11 +107,22 @@ Page({
       });
     }
   },
+  //跳转评价界面
+  evaluateTap:function(e) {
+    var gid = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../../pages/pingjia/pingjia?gid='+gid,
+    })
+  },
   // 跳转购物车页面 
   gotoCart: function () {
     wx.switchTab({
       url: '../../pages/gouwuche/gouwuche',
     })
+  },
+  // 单条商品购买
+  readyToPayTap:function() {
+
   },
   // 查询单个商品
   _getGoodsItem: function (gid) {

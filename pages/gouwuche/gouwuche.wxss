@@ -183,10 +183,12 @@ icon {
   margin-left: 10rpx;
 } 
 .flex-end {
-  padding:0 80rpx;
   background-color: #FFA3CB;
   color: #fff;
 }
 .red {
   color: red;
+}
+.to-pay,.delete {
+  padding: 0 40rpx;
 }

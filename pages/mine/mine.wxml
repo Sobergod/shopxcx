@@ -90,7 +90,7 @@
         </view>
       </view>
     </navigator>
-    <navigator url='../../pages/youhuiquan/youhuiquan'>
+    <navigator url='../../pages/mineyhq/mineyhq'>
       <view class="list-item">
         <view class='list_left'>
           <text class='iconfont icon-youhuiquan'></text>

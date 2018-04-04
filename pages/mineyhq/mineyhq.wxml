@@ -1,22 +1,17 @@
 <!--pages/youhuiquan/youhuiquan.wxml-->
 <view wx:if='{{!status}}' class='no-con'>
   <image src='../../images/noyhq.png'></image>
-  <text>暂无优惠券</text>
+  <text>暂无优惠券,快去领取吧!</text>
 </view>
-<view class='bg'>
+<view wx:else class='bg'>
   <block wx:for="{{menu_b}}">
     <view class='list_c'>
       <view class='tw'>
         <image class="tpa" src="{{item.tpUrl}}" mode="aspectFill">
         </image>
         <view class='bj'>
-          <view>
-            <text class='text_b'>{{item.title}}</text>
-            <text class='text_c'>{{item.new}} </text>
-          </view>
-          <view class='aaa'>
-            <button type="defaule" bindtap="modalcnt" class='btn'>一键领取</button>
-          </view>
+          <view class='text_b'>{{item.title}}</view>
+          <view class='text_c'>{{item.new}} </view>
         </view>
       </view>
     </view>
