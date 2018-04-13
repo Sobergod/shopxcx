@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/ptlist/ptlist",
+    "pages/search/search",
     "pages/gmxx/gmxx",
     "pages/mineyhq/mineyhq",
     "pages/pay-result/pay-result",
@@ -16,7 +18,7 @@
     "pages/xiepingjia/xiepingjia",
     "pages/xiangqing/xiangqing",
     "pages/huodong/huodong",
-    "pages/huodongfenlei/huodongfenlei",  
+    "pages/huodongfenlei/huodongfenlei",
     "pages/qbdd/qbdd",
     "pages/tab/tab",
     "pages/youhuiquan/youhuiquan",
@@ -35,27 +37,27 @@
   },
   "tabBar": {
     "color": "#a9b7b7",
-    "selectedColor": "#11cd6e",
+    "selectedColor": "#D4237A",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "iconPath": "images/home.png",
-        "selectedIconPath":"images/homesel.png",
-        "pagePath": "pages/index/index"
-        
+        "selectedIconPath": "images/homesel.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
       },
       {
         "iconPath": "images/car.png",
         "selectedIconPath": "images/carsel.png",
-        "pagePath": "pages/gouwuche/gouwuche"
-        
+        "pagePath": "pages/gouwuche/gouwuche",
+        "text": "购物车"
       },
       {
         "iconPath": "images/user.png",
         "selectedIconPath": "images/usersel.png",
-        "pagePath": "pages/mine/mine"
-        
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
       }
     ]
   }

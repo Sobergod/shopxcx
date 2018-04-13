@@ -1,0 +1,27 @@
+<!--pages/ptlist/ptlist.wxml-->
+<view class='wrap'>
+  <block wx:for="{{ptlist}}">
+    <view class='item'>
+      <view class='itemleft'>
+        <image src="{{item.shopphoto}}"></image>
+      </view>
+      <view class='itemright'>
+        <view class='con'>
+          <view>{{item.name}}</view>
+          <view>数量:{{item.num}}</view>
+          <view>￥{{item.money}}</view>
+        </view>
+        <view class='fals'>
+          <text wx:if="{{item.code==1}}" class='t2'>拼团中...</text>
+          <view wx:elif="{{item.code==2}}">
+            <text class='t2'>拼团成功</text>
+          </view>
+          <view wx:else>
+            <text class='t1'>拼团失败</text>
+            <view class='t3'>钱将原路返回</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

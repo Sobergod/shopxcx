@@ -21,35 +21,9 @@ Page({
     interval: 5000,
     duration: 1000,
     goodsItem: {},
-    dataItem: {
-      id: 1,
-      name: "净颜清透祛痘保湿乳",//y
-      jj: "保湿  祛痘  洁净毛孔",//y
-      price: "￥300",//y
-      sp_num: "商品编号：1234567890",//y
-      counts: 1,//y
-      picture: '../../images / two.jpg',
-      yj: "原价3000",
-      pp: "品牌 : ",
-      pp_name: "兰希黎",
-      sp_name: "商品名称：很好用的化妆品系列",
-      sp_site: "商品产地：中国大陆",
-      sp_fenlei: "分类：组合装",
-    },
     allCollection: [],
     status: true,
-    id: 1,
-    name: "净颜清透祛痘保湿乳",//y
-    jj: "保湿  祛痘  洁净毛孔",//y
-    price: "￥300",//y
-    counts: 1,//y
-    sp_num: "商品编号：1234567890",//y
-    yj: "原价3000",
-    pp: "品牌 : ",
-    pp_name: "兰希黎",
-    sp_name: "商品名称：很好用的化妆品系列",
-    sp_site: "商品产地：中国大陆",
-    sp_fenlei: "分类：组合装",
+    counts: 1,
   },
   onLoad: function (options) {
     var gid = options.gid;
@@ -108,10 +82,10 @@ Page({
     }
   },
   //跳转评价界面
-  evaluateTap:function(e) {
+  evaluateTap: function (e) {
     var gid = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../../pages/pingjia/pingjia?gid='+gid,
+      url: '../../pages/pingjia/pingjia?gid=' + gid,
     })
   },
   // 跳转购物车页面 
@@ -120,10 +94,7 @@ Page({
       url: '../../pages/gouwuche/gouwuche',
     })
   },
-  // 单条商品购买
-  readyToPayTap:function() {
 
-  },
   // 查询单个商品
   _getGoodsItem: function (gid) {
     var goodsNum,
@@ -158,5 +129,16 @@ Page({
     let counts = this.data.counts
     shoppingCart.addCart(goodsItem, counts);
   },
-
+  // 单条商品购买
+  readyToPayTap: function (e) {
+    console.log(e);
+    var img = e.currentTarget.dataset.img,
+      id = e.currentTarget.dataset.id,
+      name = e.currentTarget.dataset.name,
+      price = e.currentTarget.dataset.price,
+      count = e.currentTarget.dataset.count;
+    wx.navigateTo({
+      url: '../../pages/gmxx/gmxx?img=' + img + '&id=' + id + '&name=' + name + '&price=' + price + '&count=' + count + '&from=detail',
+    });
+  },
 })

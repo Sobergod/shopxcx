@@ -3,21 +3,20 @@
   <view class='navber'>
     <text class='daka'>打卡规则</text>
     <view>
-      <text class='denglu'>自动登录</text>
-      <switch type="switch" color='#ffa3cc' checked="true" bindchange="listenerSwitch" />
+      <text class='denglu'>自动签到</text>
+      <switch type="switch" color='#ffa3cc' checked="{{status}}" bindchange="listenerSwitch" />
     </view>
   </view>
-
+  <view style='background:#fff; padding:20rpx; font-size:14px;text-align:center; border-bottom:5rpx solid #eee;'>当前可用{{total}}元红包</view>
   <!-- 横向导航栏结束 -->
   <view class='main'>
-    <view class='list_a' wx:for="{{menu}}">
+    <view class='list_a' wx:for="{{menu}}" wx:key=''>
       <text class='text_a'>{{item.title}}</text>
-      <text class='text_b'>{{item.title_a}}</text>
+      <!-- <text class='text_b'>{{item.title_a}}</text> -->
       <view class='list'>
-        <block wx:for="{{menu_a}}">
-          <view class='list_b'>
-            <image class="image_frame" src="{{item.picUrl}}" mode="aspectFill">
-            </image>
+        <block>
+          <view class="list_b {{resData.day==id?'red':''}}" wx:for="{{menu_a}}" wx:key='' wx:for-index="id" data-id="{{id+1}}" bindtap="{{resData.day==id+1?'moneyHB':''}}">
+            <image class="image_frame" src="{{item.picUrl}}" mode="aspectFill"></image>
             <view>
               <text class='iconfont icon-sdf'></text>
               <text class='text_c'>{{item.title_b}}</text>
@@ -28,10 +27,10 @@
     </view>
   </view>
 
-<!-- 列表结束 -->
+  <!-- 列表结束 -->
 
-<view class='sidebar'>
+  <!-- <view class='sidebar'>
     <text>领奖记录</text>
     <text class='iconfont icon-youjiantou'></text>
-  </view>
-</view>
+  </view>-->
+</view> 

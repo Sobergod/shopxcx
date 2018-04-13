@@ -17,38 +17,37 @@
       <text class='left_bottom'>{{goodsItem.shopInfo}}</text>
     </view>
     <view class='navber_right'>
-      <text class='right_top'>{{goodsItem.shopmoney}}</text>
-      <text class='right_bottom' style='text-decoration: line-through'>{{goodsItem.oldmoney}}</text>
+      <text class='right_top'>￥{{goodsItem.shopmoney}}</text>
     </view>
   </view>
-
   <!-- 标题结束 -->
+
   <view class='pj'>
     <text class='pj_left'>用户评价</text>
     <text class='iconfont icon-arrow-right'></text>
   </view>
-
   <!-- 用户评价结束 -->
+
+  <view class='pj'>
+    <text class='pj_left'>拼团商品只可购买一次</text>
+    <!-- <text class='iconfont icon-arrow-right'></text> -->
+  </view>
+
   <view class='sm'>
     <view class='pp'>
-      <text class='pp'>{{pp}}</text>
-      <text class='pp_name'>{{pp_name}}</text>
+      <text class='pp'>{{goodsItem.shopinfo}}</text>
     </view>
-    <text class='pp'>{{sp_name}}</text>
-    <text class='pp'>{{sp_num}}</text>
-    <text class='pp'>{{sp_site}}</text>
-    <text class='pp'>{{sp_fenlei}}</text>
   </view>
 
   <view class='xx'>
     <text class='pj_left'>商品信息</text>
   </view>
-    <view>
-      <block wx:for="{{goodsItem.photoMore}}" wx:key="{{item.fid}}">
-        <image class="image_frame" src="{{item}}" mode="aspectFill">
-        </image>
-      </block>
-    </view>
+  <view>
+    <block wx:for="{{goodsItem.photoMore}}" wx:key="{{item.fid}}">
+      <image class="image_frame" src="{{item}}" mode="aspectFill">
+      </image>
+    </block>
+  </view>
 
   <!-- 用户评价结束 -->
   <view>
@@ -68,16 +67,16 @@
       <text class='iconfont {{status?"icon-shoucang":"icon-shoucang1" }}'></text>
       <text>收藏</text>
     </view>
-    <view class='a' bindtap='gotoCart'>
+    <!-- <view class='a' bindtap='gotoCart'>
       <text class='iconfont icon-gouwuche'></text>
       <text>购物车</text>
+    </view> -->
+    <view class='b' bindtap='ptPayTap' data-id='{{goodsItem.shopid}}' data-img='{{goodsItem.shopphoto}}' data-name='{{goodsItem.shopname}}' data-price='{{goodsItem.shopmoney}}' data-count='{{1}}'>
+      <text class='tabber_cs'>￥{{goodsItem.shopmoney}}</text>
+      <text class='tabber_cs'>单独购买</text>
     </view>
-    <view class='b' bindtap='addInCartTap'>
-      <text class='tabber_cs'>￥{{ddgm}}</text>
-       <text class='tabber_cs'>单独购买</text>
-    </view>
-    <view class='c' bindtap='readyToPay'>
-    <text class='tabber_hs'>￥{{ptgm}}</text>
+    <view class='c' bindtap='ptPayTap' data-id='{{goodsItem.shopid}}' data-img='{{goodsItem.shopphoto}}' data-name='{{goodsItem.shopname}}' data-price='{{goodsItem.money}}' data-count='{{1}}'>
+      <text class='tabber_hs'>￥{{goodsItem.money}}</text>
       <text class='tabber_hs'>发起拼团</text>
     </view>
   </view>

@@ -1,5 +1,8 @@
 <!--pages/pingjia/pingjia.wxml-->
-<view class='center'>
+<view wx:if="{{!status}}" class='no-pg'>
+  <view>暂无评价</view>
+</view>
+<view wx:else class='center'>
   <block wx:for="{{menu}}" wx:key="{{item.fid}}">
     <view class='center_list'>
       <view class='list'>

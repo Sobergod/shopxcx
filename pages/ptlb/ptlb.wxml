@@ -1,15 +1,18 @@
 <!--pages/ptlb/ptlb.wxml-->
-<view  class='center'>
-  <block wx:for="{{collectionList}}">
+<view class='no-t' wx:if='{{!status}}'>
+  <view>暂无团购商品</view>
+</view>
+<view wx:else class='center'>
+  <block wx:for="{{ptList}}">
     <view class='list'>
-      <image class="image_frame" src="{{item.photo}}" mode="aspectFill"></image>
-      <text class='text_name'>{{item.name}}</text>
+      <image class="image_frame" src="{{item.shopphoto}}" mode="aspectFill"></image>
+      <text class='text_name'>{{item.shopname}}</text>
       <view class='fenlan'>
         <view>
-          <text class='text_money'>{{item.money}}</text>
+          <text class='text_money'>￥{{item.shopmoney}}</text>
         </view>
         <view bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
-          <button class='pintuan'>去拼团</button>
+          <button bindtap='ptDetailTap'  data-ptid='{{item.id}}' class='pintuan'>去拼团</button>
         </view>
       </view>
     </view>

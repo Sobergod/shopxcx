@@ -1,0 +1,47 @@
+<!--pages/search/search.wxml-->
+<view class='container'>
+  <view class='search-container'>
+    <view class='search-wrap'>
+      <input placeholder='搜索心仪的商品' bindblur='getInputVal' value='{{searchValue}}'></input>
+      <view bindtap='restInpTap' class='cat-x'>x</view>
+    </view>
+    <view class='search-btn' bindtap='searchTap'>
+      <text>搜索</text>
+    </view>
+  </view>
+  <view wx:if='{{!status}}' class='history'>
+    <view wx:if="{{hstatus}}" class='history-nav'>
+      <text>历史搜索</text>
+      <text bindtap='delHisTap'>删除</text>
+    </view>
+    <view wx:else class='nos'> 暂无搜索记录</view>
+    <view class='history-con'>
+      <block wx:for="{{historyList}}">
+        <text data-detail='{{item}}' bindtap='historyItemTap'>{{item}}</text>
+      </block>
+    </view>
+  </view>
+  <view wx:else class='search-result'>
+    <view wx:if="{{!resStatus}}" class='no-result'>没有搜索到结果</view>
+    <view wx:else class='resule-item'>
+      <view class='center'>
+        <block wx:for="{{goodsList}}" wx:key="{{item.shopid}}">
+          <view class='list'>
+            <image bindtap='goToDetail' data-gid="{{item.shopid}}" class="image_frame" src="{{item.shopphoto}}" mode="aspectFill"></image>
+            <text class='text_name'>{{item.shopname}}</text>
+            <view class='shopinfo'>{{item.shopinfo}}</view>
+            <view class='fenlan'>
+              <view>
+                <text class='text_money'>￥{{item.shopmoney}}</text>
+              </view>
+              <view bindtap='cancelCollectionTab' data-gid='{{item.shopid}}'>
+                <text class='iconfont icon-wujiaoxingkong'></text>
+                <text class='text_shoucang'>{{item.shoucang}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

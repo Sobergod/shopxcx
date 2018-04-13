@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
-	"appid": "touristappid",
-	"projectname": "shopxcx",
+	"appid": "wxa4072a77d276a4d0",
+	"projectname": "%E5%85%B0%E5%B8%8C%E9%BB%8E%E5%95%86%E5%9F%8E",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -20,9 +20,59 @@
 			"current": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"plugin": {
 			"current": -1,
 			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pay-result",
+					"pathName": "pages/pay-result/pay-result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/gmxx/gmxx",
+					"pathName": "pages/gmxx/gmxx",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "qbdd",
+					"pathName": "pages/qbdd/qbdd",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "xiepingjia",
+					"pathName": "pages/xiepingjia/xiepingjia",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/yue/yue",
+					"pathName": "pages/yue/yue",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/ptxq/ptxq",
+					"pathName": "pages/ptxq/ptxq",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/qbdd/qbdd",
+					"pathName": "pages/qbdd/qbdd",
+					"query": ""
+				}
+			]
 		}
 	}
 }

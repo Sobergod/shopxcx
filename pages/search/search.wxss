@@ -1,0 +1,91 @@
+/* pages/search/search.wxss */
+@import "../../pages/shoucang/shoucang.wxss";
+.shopinfo {
+  padding: 0 10rpx;
+  font-size: 12px;
+  height: 4em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 20rpx;
+  background: #ea89ae;
+}
+
+.search-wrap {
+  position: relative;
+  width: 70%;
+  margin-right: 20rpx;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.search-wrap input {
+  padding-left: 60rpx;
+  font-size: 12px;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.history-nav {
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
+  color: #888;
+  font-size: 14px;
+}
+
+.history-con {
+  padding: 20rpx;
+}
+
+.nos {
+  padding-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #888;
+}
+.cat-x {
+  display: none;
+  z-index: 99;
+  padding: 2px;
+  top: 4px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background: #eee;
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+}
+.history-con text {
+  padding: 10rpx;
+  margin: 5rpx 10rpx;
+  border-radius: 10px;
+  background: #ddd;
+  color: #000;
+  font-size: 12px;
+}
+
+.no-result {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-size: 14px;
+}

@@ -30,14 +30,9 @@
 
   <!-- 用户评价结束 -->
   <view class='sm'>
-    <view class='pp'>
-      <text class='pp'>{{pp}}</text>
-      <text class='pp_name'>{{pp_name}}</text>
+    <view class='pp'>view
+      <text class='pp'>{{goodsItem.shopinfo}}</text>
     </view>
-    <text class='pp'>{{sp_name}}</text>
-    <text class='pp'>{{sp_num}}</text>
-    <text class='pp'>{{sp_site}}</text>
-    <text class='pp'>{{sp_fenlei}}</text>
   </view>
 
   <view class='xx'>
@@ -60,14 +55,14 @@
 
   <view class='kg'></view>
   <view class='tabber'>
-    <button class='w'>
+    <button class='w' open-type='contact'>
       <text class='iconfont icon-kefu'></text>
       <text>客服</text>
     </button>
     <view class='a' bindtap='changeCollectionTap' data-gid='{{goodsItem.shopid}}' data-status='{{status}}'>
       <text class='iconfont {{status?"icon-shoucang":"icon-shoucang1" }}'></text>
       <text>收藏</text>
-    </view>
+    </view> 
     <view class='a' bindtap='gotoCart'>
       <text class='iconfont icon-gouwuche'></text>
       <text>购物车</text>
@@ -75,7 +70,7 @@
     <view class='b' bindtap='addInCartTap'>
       <text class='tabber_cs'>加入购物车</text>
     </view>
-    <view class='c' bindtap='readyToPayTap'>
+    <view class='c'  data-img='{{goodsItem.shopphoto}}' data-name='{{goodsItem.shopname}}'  data-count="{{1}}" data-price='{{goodsItem.shopmoney}}'  data-id="{{goodsItem.shopid}}" bindtap='readyToPayTap'>
       <text class='tabber_hs'>立即购买</text>
     </view>
   </view>

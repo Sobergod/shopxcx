@@ -1,5 +1,10 @@
 /* pages/pingjia/pingjia.wxss */
-
+.no-pg {
+  padding-top: 40px;
+  font-size: 14px;
+  text-align: center;
+  color: #888;
+}
 .center {
   padding-top: 10rpx;
 }

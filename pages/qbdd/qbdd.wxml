@@ -1,79 +1,86 @@
 <scroll-view scroll-x="true" bindscroll="scroll" class="scroll-view_H list-liu">
   <view class="scroll-view-item_H swiper-tab-list {{currentTab==0?'on':''}}" data-current="0" bindtap="swichNav" hover-class="eee">全部</view>
   <view class="scroll-view-item_H swiper-tab-list {{currentTab==1?'on':''}}" data-current="1" bindtap="swichNav" hover-class="eee">待付款</view>
-  <view class="scroll-view-item_H swiper-tab-list {{currentTab==2?'on':''}}" data-current="2" bindtap="swichNav" hover-class="eee">待发货</view>
-  <view class="scroll-view-item_H swiper-tab-list {{currentTab==3?'on':''}}" data-current="3" bindtap="swichNav" hover-class="eee">已发货</view>
-  <view class="scroll-view-item_H swiper-tab-list {{currentTab==4?'on':''}}" data-current="4" bindtap="swichNav" hover-class="eee">已完成</view>
+  <view class="scroll-view-item_H swiper-tab-list {{currentTab==2?'on':''}}" data-current="2" bindtap="swichNav" hover-class="eee">待收货</view>
+  <view class="scroll-view-item_H swiper-tab-list {{currentTab==3?'on':''}}" data-current="3" bindtap="swichNav" hover-class="eee">待评价</view>
+  <view class="scroll-view-item_H swiper-tab-list {{currentTab==4?'on':''}}" data-current="4" bindtap="swichNav" hover-class="eee">售后</view>
 </scroll-view>
 
-<!-- 选项卡内容 -->
+<!-- 全部订单 -->
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
   <swiper-item>
     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
       <view class="kong"></view>
       <!--写入显示内容  -->
-      <view class="center" wx:for="{{carts}}" wx:key="*this">
+      <view class="center" wx:for="{{allOrder}}" wx:key="*this">
         <view class="list">
           <!-- 图片 -->
           <view class="pic">
-            <image src="{{item.imgurl}}"></image>
+            <image src="{{item.shopphoto}}"></image>
           </view>
           <!-- 类型表述 -->
           <view class="con">
-            <text class="type1">{{item.type1}}</text>
-            <text class="type2">{{item.type2}}</text>
+            <text class="type1">{{item.info}}</text>
+            <text class="type2">{{item.ddbh}}</text>
           </view>
           <!-- 价格 -->
           <view class="price">
-            <text class="price1">￥{{item.price}}</text>
+            <text class="price1">￥{{item.money}}</text>
             <text class="number">×{{item.num}}</text>
           </view>
         </view>
         <view class='xinxi'>
           <text>共{{item.num}}件商品 </text>
-          <text> 合计：{{item.price}}</text>
-          <text> （含运费：{{item.yunfei}}）</text>
+          <text> 合计：{{item.money}}</text>
+          <text> （含运费：{{0}}）</text>
         </view>
         <view class='dilan'>
-          <text>评价</text>
-          <text>查询余额</text>
-          <text>再次充值</text>
+          <block wx:if="{{item.code == 4}}">
+            <text data-ddbh='{{item.ddbh}}' data-shopid='{{item.id}}' bindtap='gotoPJTap'>去评价</text>
+          </block>
+          <block wx:elif="{{item.code == 1}}">
+            <text data-ddbh='{{item.ddbh}}' bindtap='QRSHTap'>确认收货</text>
+          </block>
+          <block wx:elif="{{item.code == 3}}">
+            <button style='margin:auto 0; width:160rpx;height:50rpx; font-size:12px; line-height:50rpx;' open-type='contact'>联系客服</button>
+          </block>
+          <block wx:else>
+            <text>已完成</text>
+          </block>
         </view>
       </view>
     </scroll-view>
   </swiper-item>
 
-   <!-- 全部订单 内容 -->
+  <!-- 待付款订单 -->
   <swiper-item>
     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
       <view class="kong"></view>
       <!--写入显示内容  -->
-      <view class="center" wx:for="{{carts}}" wx:key="*this">
+      <view class="center" wx:for="{{dfOrder}}" wx:key="*this">
         <view class="list">
           <!-- 图片 -->
           <view class="pic">
-            <image src="{{item.imgurl}}"></image>
+            <image src="{{item.shopphoto}}"></image>
           </view>
           <!-- 类型表述 -->
           <view class="con">
-            <text class="type1">{{item.type1}}</text>
-            <text class="type2">{{item.type2}}</text>
+            <text class="type1">{{item.info}}</text>
+            <text class="type2">{{item.ddbh}}</text>
           </view>
           <!-- 价格 -->
           <view class="price">
-            <text class="price1">￥{{item.price}}</text>
+            <text class="price1">￥{{item.money}}</text>
             <text class="number">×{{item.num}}</text>
           </view>
         </view>
         <view class='xinxi'>
           <text>共{{item.num}}件商品 </text>
-          <text> 合计：{{item.price}}</text>
-          <text> （含运费：{{item.yunfei}}）</text>
+          <text> 合计：{{item.money}}</text>
+          <text> （含运费：{{0}}）</text>
         </view>
         <view class='dilan'>
-          <text>评价</text>
-          <text>查询余额</text>
-          <text>再次充值</text>
+          <text data-info='{{item}}' data-num='{{item.num}}' data-money='{{item.money}}' bindtap='gotoPayTap'>去付款</text>
         </view>
       </view>
     </scroll-view>
@@ -84,32 +91,30 @@
     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
       <view class="kong"></view>
       <!--写入显示内容  -->
-      <view class="center" wx:for="{{carts}}" wx:key="*this">
+      <view class="center" wx:for="{{dsOrder}}" wx:key="*this">
         <view class="list">
           <!-- 图片 -->
           <view class="pic">
-            <image src="{{item.imgurl}}"></image>
+            <image src="{{item.shopphoto}}"></image>
           </view>
           <!-- 类型表述 -->
           <view class="con">
-            <text class="type1">{{item.type1}}</text>
-            <text class="type2">{{item.type2}}</text>
+            <text class="type1">{{item.info}}</text>
+            <text class="type2">{{item.ddbh}}</text>
           </view>
           <!-- 价格 -->
           <view class="price">
-            <text class="price1">￥{{item.price}}</text>
+            <text class="price1">￥{{item.money}}</text>
             <text class="number">×{{item.num}}</text>
           </view>
         </view>
         <view class='xinxi'>
           <text>共{{item.num}}件商品 </text>
-          <text> 合计：{{item.price}}</text>
-          <text> （含运费：{{item.yunfei}}）</text>
+          <text> 合计：{{item.money}}</text>
+          <text> （含运费：{{0}}）</text>
         </view>
         <view class='dilan'>
-          <text>评价</text>
-          <text>查询余额</text>
-          <text>再次充值</text>
+          <text data-ddbh='{{item.ddbh}}' bindtap='QRSHTap'>确认收货</text>
         </view>
       </view>
     </scroll-view>
@@ -120,32 +125,30 @@
     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
       <view class="kong"></view>
       <!--写入显示内容  -->
-      <view class="center" wx:for="{{carts}}" wx:key="*this">
+      <view class="center" wx:for="{{dpOrder}}" wx:key="*this">
         <view class="list">
           <!-- 图片 -->
           <view class="pic">
-            <image src="{{item.imgurl}}"></image>
+            <image src="{{item.shopphoto}}"></image>
           </view>
           <!-- 类型表述 -->
           <view class="con">
-            <text class="type1">{{item.type1}}</text>
-            <text class="type2">{{item.type2}}</text>
+            <text class="type1">{{item.info}}</text>
+            <text class="type2">{{item.ddbh}}</text>
           </view>
           <!-- 价格 -->
           <view class="price">
-            <text class="price1">￥{{item.price}}</text>
+            <text class="price1">￥{{item.money}}</text>
             <text class="number">×{{item.num}}</text>
           </view>
         </view>
         <view class='xinxi'>
           <text>共{{item.num}}件商品 </text>
-          <text> 合计：{{item.price}}</text>
-          <text> （含运费：{{item.yunfei}}）</text>
+          <text> 合计：{{item.money}}</text>
+          <text> （含运费：{{0}}）</text>
         </view>
         <view class='dilan'>
-          <text>评价</text>
-          <text>查询余额</text>
-          <text>再次充值</text>
+          <text data-ddbh='{{item.ddbh}}' data-shopid='{{item.id}}' bindtap='gotoPJTap'>去评价</text>
         </view>
       </view>
     </scroll-view>
@@ -156,32 +159,30 @@
     <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
       <view class="kong"></view>
       <!--写入显示内容  -->
-      <view class="center" wx:for="{{carts}}" wx:key="*this">
+      <view class="center" wx:for="{{shOrder}}" wx:key="*this">
         <view class="list">
           <!-- 图片 -->
           <view class="pic">
-            <image src="{{item.imgurl}}"></image>
+            <image src="{{item.shopphoto}}"></image>
           </view>
           <!-- 类型表述 -->
           <view class="con">
-            <text class="type1">{{item.type1}}</text>
-            <text class="type2">{{item.type2}}</text>
+            <text class="type1">{{item.info}}</text>
+            <text class="type2">{{item.ddbh}}</text>
           </view>
           <!-- 价格 -->
           <view class="price">
-            <text class="price1">￥{{item.price}}</text>
+            <text class="price1">￥{{item.money}}</text>
             <text class="number">×{{item.num}}</text>
           </view>
         </view>
         <view class='xinxi'>
           <text>共{{item.num}}件商品 </text>
-          <text> 合计：{{item.price}}</text>
-          <text> （含运费：{{item.yunfei}}）</text>
+          <text> 合计：{{item.money}}</text>
+          <text> （含运费：{{0}}）</text>
         </view>
         <view class='dilan'>
-          <text>评价</text>
-          <text>查询余额</text>
-          <text>再次充值</text>
+          <button style='margin-right:0; width:160rpx;height:50rpx; font-size:12px; line-height:50rpx;' open-type='contact'>联系客服</button>
         </view>
       </view>
     </scroll-view>
@@ -189,6 +190,3 @@
 
   <!-- 已完成 内容 -->
 </swiper>
-
-
-

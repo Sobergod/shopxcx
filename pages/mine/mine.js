@@ -2,6 +2,7 @@
 var app = getApp()
 Page({
   data: {
+    title:'',
     userInfo: wx.getStorageSync('userInfo'),
     // orderItems
     orderItems: [
@@ -12,7 +13,7 @@ Page({
       { name: '售后', },
     ],
   },
-  addressTab:function() {
+  addressTap:function() {
     wx.chooseAddress({
       success: function(res) {
         wx.setStorageSync('useThisAddress', res)
@@ -20,6 +21,12 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
-  }
+  },
+  listClick: function (event) {
+    var that=this;
+    console.log(event);
+    var index = event.currentTarget.dataset.ld
+    wx.navigateTo({ url: '../qbdd/qbdd?ld=' + index })
+  } 
 
 })

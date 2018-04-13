@@ -6,18 +6,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    menu_b: [
-      { tpUrl: "../../images/jxhd_01.jpg", title: "全场满30减2", new: "领取后6天内有效" },
-      { tpUrl: "../../images/jxhd_01.jpg", title: "全场满3000减200", new: "领取后6天内有效" }
-    ],
-    status:false,
+    menu_b: [],
+    status: false,
 
   },
   onLoad: function (options) {
+    var that = this;
+    // 获取我的优惠券
     common.netWorkRequest({
-      url: 'Xuser/coupon_usersel',
+      url: 'Xmarketing/find_Coupon',
+      params:{
+        openid:wx.getStorageSync("openId")
+      },
       onSuccess: function (res) {
         console.log(res);
+        if (res.data instanceof Array) {
+          that.setData({
+            menu_b: res.data,
+            status: true
+          })
+        } else {
+          that.setData({
+            menu_b: res.data,
+            status: false
+          })
+        }
       }
     })
   },

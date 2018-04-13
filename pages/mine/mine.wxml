@@ -6,7 +6,7 @@
       </image>
       <view class='userinfo_b'>
         <text class='text_a'>{{userInfo.userName}}</text>
-        <text bindtap='addressTab' class='text_b'>管理收货地址</text>
+        <text bindtap='addressTap' class='text_b'>管理收货地址</text>
       </view>
     </view>
   </view>
@@ -22,24 +22,24 @@
           <text class="title" src="{{title}}" mode="aspectFill">签到</text>
         </view>
       </navigator>
-      <view class='nav-item'>
+      <view class='nav-item' bindtap="listClick" data-ld="{{1}}">
         <text class='iconfont icon-daifukuan'></text>
         <text class="title" src="{{title}}" mode="aspectFill">待付款</text>
       </view>
-      <view class='nav-item'>
+      <view class='nav-item' bindtap="listClick" data-ld="{{2}}">
         <text class='iconfont icon-icon-receive'></text>
         <text class="title" src="{{title}}" mode="aspectFill">待收货</text>
       </view>
-      <view class='nav-item'>
+      <view class='nav-item' bindtap="listClick" data-ld="{{3}}">
         <text class='iconfont icon-pingjia'></text>
         <text class="title" src="{{title}}" mode="aspectFill">待评价</text>
       </view>
-      <view class='nav-item'>
+      <view class='nav-item' bindtap="listClick" data-ld="{{4}}">
         <text class='iconfont icon-shouhou'></text>
         <text class="title" src="{{title}}" mode="aspectFill">售后</text>
       </view>
     </view>
-    <view class='navs_right'>
+    <view class='navs_right' bindtap="listClick" data-ld="{{0}}">
       <text class='iconfont icon-dingdan'></text>
       <text class="title" src="{{title}}" mode="aspectFill">全部订单</text>
     </view>
@@ -70,15 +70,17 @@
         </view>
       </view>
     </navigator>
-    <view class="list-item">
-      <view class='list_left'>
-        <text class='iconfont icon-pintuan'></text>
+    <navigator url='../../pages/ptlist/ptlist'>
+      <view class="list-item">
+        <view class='list_left'>
+          <text class='iconfont icon-pintuan'></text>
+        </view>
+        <view class='list'>
+          <text class="item-text">我的拼团</text>
+          <text class='iconfont icon-arrow-right'></text>
+        </view>
       </view>
-      <view class='list'>
-        <text class="item-text">我的拼团</text>
-        <text class='iconfont icon-arrow-right'></text>
-      </view>
-    </view>
+    </navigator>
     <navigator url='../../pages/qiandao/qiandao'>
       <view class="list-item">
         <view class='list_left'>
@@ -105,27 +107,16 @@
       <view class='list_left'>
         <text class='iconfont icon-kefu'></text>
       </view>
-      <view class='list'>
+      <button class='list resbtn' open-type='contact'>
         <text class="item-text">联系客服</text>
         <text class='iconfont icon-arrow-right'></text>
-      </view>
+      </button>
     </view>
-    <navigator url=''>
-      <view class="list-item">
-        <view class='list_left'>
-          <text class='iconfont icon-jiaoyin'></text>
-        </view>
-        <view class='list'>
-          <text class="item-text">足记</text>
-          <text class='iconfont icon-arrow-right'></text>
-        </view>
-      </view>
-    </navigator>
     <view class="list-item">
       <view class='list_left'>
         <text class='iconfont icon-dizhi'></text>
       </view>
-      <view class='list'>
+      <view bindtap='addressTap' class='list'>
         <text class="item-text">收货地址</text>
         <text class='iconfont icon-arrow-right'></text>
       </view>

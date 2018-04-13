@@ -127,6 +127,7 @@ swiper {
 .a {
   flex-basis: 20%;
   display: flex;
+  margin-right: 60rpx;
   flex-direction: column;
   justify-content: center;
   align-items: center;

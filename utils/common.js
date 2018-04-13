@@ -69,7 +69,7 @@ function netWorkRequest(request) {
       wx.hideLoading();
     },
     reComplete: function (res) {
-      st_success("加载成功");
+      // st_success("加载成功");
       wx.hideLoading();
     }
   }
@@ -87,13 +87,16 @@ function netWorkRequest(request) {
       var code = res.statusCode.toString();
       var startChar = code.charAt(0);
       if (startChar == '2') {
+        wx.hideLoading();
         request.onSuccess ? request.onSuccess(res) : NetWork.reSuccess(res);
       }
     },
     fail: function (res) {
+      wx.hideLoading();
       request.onFail ? request.onFail(res) : NetWork.reFail(res);
     },
     complete: function (res) {
+      wx.hideLoading();
       request.onComplete ? request.onComplete(res) : NetWork.reComplete(res);
     },
   })

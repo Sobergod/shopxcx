@@ -10,8 +10,9 @@
         <image class="tpa" src="{{item.tpUrl}}" mode="aspectFill">
         </image>
         <view class='bj'>
-          <view class='text_b'>{{item.title}}</view>
-          <view class='text_c'>{{item.new}} </view>
+          <view class='text_b'>满{{item.limitmoney}}</view>
+          <view class='text_c'>减{{item.money}} </view>
+          <view style='font-size:14px;'> 使用时间:{{item.limitdat}}前使用</view>
         </view>
       </view>
     </view>

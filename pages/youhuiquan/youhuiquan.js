@@ -1,27 +1,53 @@
 // pages/youhuiquan/youhuiquan.js
 var common = require('../../utils/common.js');
 Page({
- 
+
   /**
    * 页面的初始数据
    */
   data: {
-    menu_b: [
-      { tpUrl: "../../images/jxhd_01.jpg", title: "全场满30减2", new: "领取后6天内有效" },
-      { tpUrl: "../../images/jxhd_01.jpg", title: "全场满3000减200", new: "领取后6天内有效" }
-    ],
-    status:false,
+    menu_b: [],
+    status: false,
   },
   onLoad: function (options) {
+    var that = this;
     common.netWorkRequest({
-      url:'Xuser/coupon_sel',
-      onSuccess:function(res) {
+      url: 'Xmarketing/listCoupon',
+      onSuccess: function (res) {
         console.log(res);
+        if (res.data instanceof Array) {
+          that.setData({
+            menu_b: res.data,
+            status: true
+          })
+        }
+      }
+    })
+  },
+  getHbTap: function (e) {
+    var yhid = e.currentTarget.dataset.yhid;
+    // Xmarketing / lq_Coupon
+    common.netWorkRequest({
+      url: 'Xmarketing/lq_Coupon',
+      params: {
+        openid: wx.getStorageSync("openId"),
+        id: yhid,
+      },
+      onSuccess: function (res) {
+        if (res.data.code == 1) {
+          wx.showModal({
+            title: '领取成功',
+          })
+        } else {
+          wx.showModal({
+            title: '领取失败',
+          })
+        }
       }
     })
   },
   onShow: function () {
-   
+
   },
 
 })

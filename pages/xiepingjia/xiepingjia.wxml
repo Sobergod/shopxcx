@@ -10,9 +10,9 @@
   </view>
   <view class='center'>
     <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
-      <textarea class='section_input' placeholder="宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧！"></textarea>
+      <textarea bindblur="bindTextAreaBlur" style='pading:20rpx' class='section_input' value='{{ptVal}}' placeholder="宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧！"></textarea>
       <view class="btn-area">
-        <button form-type="submit" class='btn'>提交</button>
+        <button bindtap='submit' class='btn'>提交</button>
       </view>
     </form>
   </view>

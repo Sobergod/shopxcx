@@ -2,7 +2,7 @@
 <view class='center'>
   <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
       <view class="section__title">您有什么问题或者意见想对我们说？</view>
-      <textarea class='section_input' placeholder="您的宝贵意见是我们进步的源泉！"></textarea>   
+      <textarea class='section_input' bindblur='getInputVal' placeholder="您的宝贵意见是我们进步的源泉！" value='{{yj}}'></textarea>   
     <view class="btn-area">
       <button form-type="submit" class='btn'>提交</button>
     </view>

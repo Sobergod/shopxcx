@@ -4,5 +4,6 @@
   <text class='jine'>{{yue}}</text>
 </view>
 <view class='anniu'>
-  <button class='btn'>充值</button>
+  <input class='btn' bindinput="moneyInput" type="number" value="{{rechargeMoney}}" placeholder="输入钱数(元)" placeholder-style="color:#fff"></input>
+  <button class='btn' bindtap='reCharge'>充值</button>
 </view>

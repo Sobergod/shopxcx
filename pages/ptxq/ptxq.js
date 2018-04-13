@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ddgm:"123.00",
-    ptgm:"234.00",
+    ddgm: "123.00",
+    ptgm: "234.00",
     imgUrls: [
       '../../images/two.jpg',
       '../../images/two.jpg',
@@ -69,7 +69,6 @@ Page({
         openid: wx.getStorageSync('openId')
       },
       onSuccess: function (res) {
-        console.log(res);
         var status =
           that.checkGoodsIsCollect(
             that.data.goodsItem.shopid,
@@ -113,6 +112,17 @@ Page({
       });
     }
   },
+  ptPayTap: function (e) {
+    console.log(e);
+    var img = e.currentTarget.dataset.img,
+      id = e.currentTarget.dataset.id,
+      name = e.currentTarget.dataset.name,
+      price = e.currentTarget.dataset.price,
+      count = e.currentTarget.dataset.count;
+    wx.navigateTo({
+      url: '../../pages/gmxx/gmxx?img=' + img + '&id=' + id + '&name=' + name + '&price=' + price + '&count=' + count + '&from=pt',
+    });
+  },
   // 跳转购物车页面 
   gotoCart: function () {
     wx.switchTab({
@@ -124,18 +134,14 @@ Page({
     var goodsNum,
       that = this;
     common.netWorkRequest({
-      url: "xshop",
+      url: "Xmarketing/listDiscount",
+      method: "GET",
       params: {
-        shopid: gid,
+        id: gid,
       },
       onSuccess: function (res) {
-        var photomore = [],
-          shopphotos = [],
-          goodsItem = res.data[0];
-        goodsItem.shopPhotos = res.data[0].shopphotos.split(',');
-        goodsItem.photoMore = res.data[0].photomore.split(',');
         that.setData({
-          goodsItem: goodsItem
+          goodsItem: res.data[0],
         })
       },
     })
@@ -153,8 +159,4 @@ Page({
   //   let counts = this.data.counts
   //   shoppingCart.addCart(goodsItem, counts);
   // },
-  addInCarTap: function (){
-    
-  },
-
 })
